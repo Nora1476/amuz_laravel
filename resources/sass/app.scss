@@ -1,8 +1,51 @@
 // Fonts
-// @import url('https://fonts.bunny.net/css?family=Nunito');
+@import "./pretendard.scss";
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "bootstrap/scss/bootstrap";
+
+body {
+    background-color: #ffffff;
+    font-family: $font !important;
+
+    nav {
+        .navbar-brand {
+            & > img {
+                width: 142px;
+                height: 44px;
+            }
+        }
+    }
+    footer {
+        color: #ededed;
+        svg {
+            width: 142px;
+            height: 44px;
+        }
+        hr {
+            margin: 0;
+        }
+        .container {
+            padding-top: 56px;
+            padding-bottom: 36px;
+            &.info {
+                padding-top: 32px;
+                padding-bottom: 96px;
+                & > p {
+                    color: #d6d6d6;
+                }
+                & > span {
+                    color: #f0f0f0;
+                }
+            }
+        }
+
+        background-color: #222222;
+        .nav-link {
+            color: #ededed;
+        }
+    }
+}

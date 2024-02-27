@@ -14,8 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //app.blade.php
+    return view('home');
 });
+Route::get('/message', function () {
+    return view('message');
+});
+Route::get('/credit', function () {
+    return view('credit');
+});
+
+
+
 
 Auth::routes();
 
