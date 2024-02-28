@@ -1,0 +1,186 @@
+.message {
+    hr {
+        margin: 32px auto;
+    }
+    .message_con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 56px 0 200px;
+        background: #f2f4f8 0% 0% no-repeat padding-box;
+        .messege_container {
+            width: 100%;
+            max-width: 1224px;
+            border-radius: 24px;
+            padding: 54px 96px 72px;
+            background: #ffffff 0% 0% no-repeat padding-box;
+
+            //타이틀공통
+            .main_left-tit {
+                font: 22px/26px Pretendard;
+                font-weight: 700;
+                letter-spacing: 0px;
+                color: #000000;
+                margin-bottom: 16px;
+            }
+
+            .message_tit {
+                text-align: center;
+                font: 38px/45px Pretendard;
+                font-weight: bold;
+                letter-spacing: 0px;
+                color: #000000;
+                margin-bottom: 36px;
+            }
+
+            .massage_tags {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                text-align: center;
+                margin-bottom: 32px;
+                .tab {
+                    font: 22px/26px Pretendard;
+                    color: #555555;
+                    padding: 20px 0;
+                    background: #f5f6fa 0% 0% no-repeat padding-box;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    &.active {
+                        color: #ffffff;
+                        background: #4f44f0 0% 0% no-repeat padding-box;
+                    }
+                }
+            }
+
+            .message_small {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                font: 16px/19px Pretendard;
+                letter-spacing: 0px;
+                color: #525252;
+                span {
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        content: "";
+                        width: 4px;
+                        height: 4px;
+                        display: flex;
+                        border-radius: 50%;
+                        background: #525252 0% 0% no-repeat padding-box;
+                        margin: 0 8px;
+                    }
+                }
+            }
+
+            hr {
+                margin: 32px auto;
+            }
+
+            .message_main {
+                display: grid;
+                grid-template-columns: 1fr 400px;
+                gap: 68px;
+
+                .main_left {
+                    .main_left-recivenum {
+                    }
+
+                    .main_left-sendnum {
+                        .form-select {
+                            font: 18px/21px Pretendard;
+                            letter-spacing: 0px;
+                            color: #7b7b7b;
+
+                            &:focus {
+                                box-shadow: none;
+                            }
+                        }
+                        .form-select-lg {
+                            border: none;
+                            padding: 20px;
+                            border-radius: 8px;
+                            background-color: #f4f5f6;
+                            background-image: url("/public/img/icon/icon16.png");
+                            background-size: 26px 26px;
+                        }
+                    }
+
+                    .ain_left-typing {
+                    }
+                }
+
+                .main_right {
+                    height: 100%;
+                    position: relative;
+                    .main_right-text {
+                        height: 100%;
+                        max-height: 776px;
+                        background: #eaf8ff 0% 0% no-repeat padding-box;
+                        border: 5px solid #4d4d4d;
+                        border-radius: 22px;
+                        position: sticky;
+                        top: 20px;
+                    }
+                }
+            }
+
+            .message_setting {
+                .message_setting-check {
+                    display: flex;
+                    gap: 16px;
+                    .btn {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 20px 98px 20px 68px;
+                        font: 22px/26px Pretendard;
+                        font-weight: 600;
+                        color: #747b84;
+                        background: #f2f5f9 0% 0% no-repeat padding-box;
+                        border-radius: 8px;
+
+                        &::before {
+                            content: "";
+                            width: 32px;
+                            height: 32px;
+                            background: url("/public/img/icon/icon13.png");
+                        }
+                    }
+                    .btn-check:checked + .btn,
+                    :not(.btn-check) + .btn:active,
+                    .btn:first-child:active,
+                    .btn.active,
+                    .btn.show {
+                        color: #4f44f0;
+                        background: #ffffff 0% 0% no-repeat padding-box;
+                        box-shadow: 0px 3px 6px #293f711f;
+                        border: 2px solid #4f44f0;
+                        border-radius: 8px;
+                        &::before {
+                            background: url("/public/img/icon/icon12.png");
+                        }
+                    }
+                    .btn-outline-now {
+                    }
+                    .btn-outline-reverve {
+                    }
+                }
+            }
+
+            .massage_send {
+                width: 100%;
+                font: 22px/26px Pretendard;
+                color: #ffffff;
+                padding: 20px 0;
+                background: #4f44f0 0% 0% no-repeat padding-box;
+                border-radius: 8px;
+                border: 0;
+            }
+        }
+    }
+}
