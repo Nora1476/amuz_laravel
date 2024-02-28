@@ -15,6 +15,7 @@ body {
     background-color: #ffffff;
     font-family: $font !important;
     nav {
+        height: 80px;
         .container {
             gap: 256px;
             .navbar-brand {

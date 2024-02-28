@@ -58,6 +58,7 @@
             justify-content: center;
             align-items: center;
             background: #000000 0% 0% no-repeat padding-box;
+
             .sec__left {
                 width: 50%;
                 display: flex;
@@ -98,19 +99,29 @@
                 }
             }
             .sec__right {
+                width: 50%;
+                overflow: hidden;
                 .sec__right-con {
+                    min-height: 996px;
                     display: grid;
                     grid-template-columns: repeat(3, 254px);
+                    justify-content: center;
                     gap: 24px;
                     .sec_img {
+                        width: 100%;
                         position: relative;
-                        & > img {
-                            border-radius: 25px;
-                            &:first-child {
-                                margin-bottom: 24px;
+                        .sec_img-wrap {
+                            width: 100%;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            & > img {
+                                border-radius: 25px;
+                                &:first-child {
+                                    margin-bottom: 24px;
+                                }
                             }
                         }
-
                         &:first-child {
                             align-self: flex-end;
                             .main1 {
@@ -126,13 +137,23 @@
                                 width: 100%;
                                 height: 48%;
                             }
+                            .main2 {
+                                background: #37383e;
+                            }
                             .main5 {
                                 background: #6250ff;
+                                border-bottom-left-radius: 0;
+                                border-bottom-right-radius: 0;
                             }
                         }
                         &:nth-child(3) {
+                            bottom: 140px;
                             .main3 {
                                 background: #6250ff;
+                            }
+                            .img_frame {
+                                border-radius: 25px;
+                                background: #37383e;
                             }
                         }
                     }
@@ -178,6 +199,9 @@
                         & > span {
                             display: block;
                         }
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
                     }
                 }
             }
@@ -303,7 +327,7 @@
             .sec__main {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(2, auto);
                 gap: 44px;
                 text-align: left;
                 .sec__main-info {

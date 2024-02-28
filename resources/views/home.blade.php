@@ -16,16 +16,24 @@
             <div class="sec__right">
                 <div class="sec__right-con">
                     <div class="sec_img">
-                        <img src="/img/images/main1.png" alt="main1" class="main1">
-                        <img src="/img/images/main4.png" alt="main4"class="main4">
+                        <div class="sec_img-wrap">
+                            <img src="/img/images/main1.png" alt="main1" class="main1">
+                            <img src="/img/images/main4.png" alt="main4"class="main4">
+                        </div>
                     </div>
                     <div class="sec_img">
-                        <img src="/img/images/main2.png" alt="main2"class="main2">
-                        <img src="/img/images/main5.png" alt="main5"class="main5">
+                        <div class="sec_img-wrap">
+                            <img src="/img/images/main2.png" alt="main2"class="main2">
+                            <img src="/img/images/main5.png" alt="main5"class="main5">
+                        </div>
                     </div>
                     <div class="sec_img">
-                        <img src="/img/images/main3.png" alt="main3"class="main3">
-                        <img src="/img/images/main6.png" alt="main6"class="main6">
+                        <div class="sec_img-wrap">
+                            <img src="/img/images/main3.png" alt="main3"class="main3">
+                            <div class="img_frame">
+                                <img src="/img/images/main6.png" alt="main6"class="main6">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
