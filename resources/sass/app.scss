@@ -7,19 +7,38 @@
 // Bootstrap
 @import "bootstrap/scss/bootstrap";
 
+//view
+@import "./home.scss";
+
 body {
+    min-width: 1920px;
     background-color: #ffffff;
     font-family: $font !important;
-
     nav {
-        .navbar-brand {
-            & > img {
-                width: 142px;
-                height: 44px;
+        .container {
+            gap: 256px;
+            .navbar-brand {
+                & > img {
+                    width: 142px;
+                    height: 44px;
+                }
+            }
+            .navbar-nav {
+                gap: 80px;
+                .nav-item {
+                    .nav-link {
+                        font: normal normal 600 20px/24px Pretendard;
+                    }
+                }
             }
         }
     }
+
+    main {
+    }
+
     footer {
+        background-color: #222222;
         color: #ededed;
         svg {
             width: 142px;
@@ -29,8 +48,21 @@ body {
             margin: 0;
         }
         .container {
-            padding-top: 56px;
-            padding-bottom: 36px;
+            padding: 56px 40px 36px;
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        color: #ededed;
+                        font: 16px/33px Pretendard;
+                        letter-spacing: 0px;
+                        &:hover,
+                        &:focus {
+                            color: #ededed;
+                        }
+                    }
+                }
+            }
+
             &.info {
                 padding-top: 32px;
                 padding-bottom: 96px;
@@ -41,11 +73,6 @@ body {
                     color: #f0f0f0;
                 }
             }
-        }
-
-        background-color: #222222;
-        .nav-link {
-            color: #ededed;
         }
     }
 }
