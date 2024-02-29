@@ -1,7 +1,20 @@
 .message {
+    //공통
     hr {
         margin: 32px auto;
     }
+    .form-control {
+        border: none;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f4f5f6;
+        font: 18px/21px Pretendard;
+        color: #7b7b7b;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
     .message_con {
         display: flex;
         justify-content: center;
@@ -33,13 +46,14 @@
                 margin-bottom: 36px;
             }
 
-            .massage_tags {
+            .massage_tabs {
                 width: 100%;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 gap: 16px;
                 text-align: center;
                 margin-bottom: 32px;
+
                 .tab {
                     font: 22px/26px Pretendard;
                     color: #555555;
@@ -47,6 +61,7 @@
                     background: #f5f6fa 0% 0% no-repeat padding-box;
                     border-radius: 8px;
                     cursor: pointer;
+                    border: none;
                     &.active {
                         color: #ffffff;
                         background: #4f44f0 0% 0% no-repeat padding-box;
@@ -76,10 +91,6 @@
                 }
             }
 
-            hr {
-                margin: 32px auto;
-            }
-
             .message_main {
                 display: grid;
                 grid-template-columns: 1fr 400px;
@@ -87,12 +98,101 @@
 
                 .main_left {
                     .main_left-recivenum {
+                        .main_left-phone {
+                            display: flex;
+                            gap: 10px;
+                            .form-control {
+                                border-top-right-radius: 8px;
+                                border-bottom-right-radius: 8px;
+                            }
+                            .btn-outline-secondary {
+                                border-top-left-radius: 8px;
+                                border-bottom-left-radius: 8px;
+                                padding: 20px 30px;
+                                font: 20px/24px Pretendard;
+                                color: #ffffff;
+                                background: #4f44f0 0% 0% no-repeat padding-box;
+                            }
+                        }
+                        .main_left-phonelist {
+                            position: relative;
+                            .form-control {
+                                min-height: 238px;
+                                background: #f4f5f600 0% 0% no-repeat
+                                    padding-box;
+                                border: 1px solid #cecece;
+                                border-radius: 8px;
+                                color: #7b7b7b;
+                            }
+                            .phonelist_total {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 20px;
+                                position: absolute;
+                                bottom: 0;
+                                .phonelist_total_num {
+                                    font: 18px/21px Pretendard;
+                                    font-weight: 600;
+                                    letter-spacing: 0px;
+                                    & > span {
+                                        color: #5e2bff;
+                                    }
+                                }
+                                .phonelist_total_del {
+                                    text-decoration: underline;
+                                    font: 18px/21px Pretendard;
+                                    letter-spacing: 0px;
+                                    color: #6a6a6a;
+                                    border: none;
+                                    background: transparent;
+                                }
+                            }
+                        }
+                        .btn_wrap {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 8px;
+                            justify-content: center;
+                            align-items: center;
+
+                            & > button {
+                                font: 16px/19px Pretendard;
+                                color: #7b7b7b;
+                                background: #ffffff 0% 0% no-repeat padding-box;
+                                border: 1px solid #cecece;
+                                border-radius: 8px;
+                                padding: 12px 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                &::before {
+                                    content: "";
+                                    width: 32px;
+                                    height: 32px;
+                                    background: url("/public/img/icon/icon7.png")
+                                        no-repeat center/ cover;
+                                }
+                                &:nth-child(2) {
+                                    &::before {
+                                        background: url("/public/img/icon/icon8.png")
+                                            no-repeat center/ cover;
+                                    }
+                                }
+                                &:nth-child(3) {
+                                    &::before {
+                                        background: url("/public/img/icon/icon9.png")
+                                            no-repeat center/ cover;
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     .main_left-sendnum {
                         .form-select {
                             font: 18px/21px Pretendard;
-                            letter-spacing: 0px;
                             color: #7b7b7b;
 
                             &:focus {
@@ -109,7 +209,107 @@
                         }
                     }
 
-                    .ain_left-typing {
+                    .main_left-typing {
+                        h5 {
+                            font: 18px/21px Pretendard;
+                            font-weight: 700;
+                            color: #000000;
+                            margin: 0;
+                        }
+                        .typing_content {
+                            padding: 24px;
+                            background: #f6f6f6 0% 0% no-repeat padding-box;
+                            border: 1px solid #e1e3e5;
+                            border-radius: 8px;
+                            .form-control.msg_title {
+                                background: #ffffff 0% 0% no-repeat padding-box;
+                                border: 1px solid #cecece;
+                                border-radius: 8px;
+                                margin-bottom: 18px;
+                            }
+                            .msg_midcon {
+                                display: flex;
+                                align-items: center;
+                                margin-bottom: 16px;
+                                gap: 12px;
+                                .midcon_status {
+                                    flex: 1;
+                                    & > span {
+                                        font: 16px/19px Pretendard;
+                                        letter-spacing: 0px;
+                                        color: #ffffff;
+                                        padding: 8px 18px;
+                                        border-radius: 24px;
+                                        background: #5e2bff 0% 0% no-repeat
+                                            padding-box;
+                                    }
+                                }
+                                .midcon_byte {
+                                    display: flex;
+                                    font: 16px/19px Pretendard;
+                                    color: #8d8d8d;
+                                    & > span:first-child {
+                                        font: normal normal 16px/19px Pretendard;
+                                        font-weight: 600;
+                                        color: #5e2bff;
+                                    }
+                                }
+                                .midcon_reset {
+                                    width: 35px;
+                                    height: 35px;
+                                    background: url("/public/img/icon/icon10.png")
+                                        no-repeat center/ cover;
+                                    border: none;
+                                }
+                            }
+                            .msg_textarea {
+                                position: relative;
+                                .msg_text {
+                                    min-height: 396px;
+                                    background: #ffffff 0% 0% no-repeat
+                                        padding-box;
+                                    border: 1px solid #cecece;
+                                    border-radius: 8px;
+                                }
+                                .msg_option {
+                                    width: 100%;
+                                    position: absolute;
+                                    bottom: 0;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    gap: 12px;
+                                    padding: 20px;
+                                    & > button {
+                                        font: normal normal normal 16px/19px
+                                            Pretendard;
+                                        color: #646464;
+                                        border: none;
+                                        padding: 12px 26px;
+                                        background: #f5f5f5 0% 0% no-repeat
+                                            padding-box;
+                                        border-radius: 22px;
+                                    }
+                                }
+                            }
+                            .msg_addinclude {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
+                            .msg_images {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: flex-start;
+                                gap: 16px;
+                                .message_small {
+                                    font: 16px/19px Pretendard;
+                                    letter-spacing: 0px;
+                                    color: #797979;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -148,7 +348,8 @@
                             content: "";
                             width: 32px;
                             height: 32px;
-                            background: url("/public/img/icon/icon13.png");
+                            background: url("/public/img/icon/icon13.png")
+                                no-repeat center/ cover;
                         }
                     }
                     .btn-check:checked + .btn,
@@ -162,7 +363,8 @@
                         border: 2px solid #4f44f0;
                         border-radius: 8px;
                         &::before {
-                            background: url("/public/img/icon/icon12.png");
+                            background: url("/public/img/icon/icon12.png")
+                                no-repeat center/ cover;
                         }
                     }
                     .btn-outline-now {
