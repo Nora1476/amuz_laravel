@@ -43,7 +43,7 @@
                                 </div>
 
                                 <div class="main_left-phonelist mb-3">
-                                    <textarea class="form-control" id="message_area"
+                                    <textarea class="form-control" id="message_area" name="msg_recivenum"
                                         placeholder="번호를 입력하거나 후 엔터 혹은 추가하기를 클릭해 주세요. &#13;&#10;최대 1만 건까지 붙여넣기 가능합니다."></textarea>
                                     <div class="phonelist_total">
                                         <div class="phonelist_total_num">총 <span>0</span>명</div>
@@ -56,13 +56,14 @@
                                     <button>파일 불러오기</button>
                                     <button>최근 전송 내역</button>
                                 </div>
-
                             </div>
+
                             <hr>
                             <div class="main_left-sendnum">
                                 <h4 class="main_left-tit">발신번호</h4>
 
-                                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                                <select class="form-select form-select-lg mb-3" aria-label="Large select example"
+                                    name="msg_sendnum">
                                     <option selected>전송할 발신번호 선택</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -118,18 +119,13 @@
                                             <span>이미지 파일 형식은 JPG, PNG, GIF만 가능합니다.</span>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
-
-
                         </div>
 
                         <div class="main_right">
                             <div class="main_right-text">
-
-
+                                text
                             </div>
                         </div>
                     </div>
