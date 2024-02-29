@@ -4,21 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
 return new class extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('message_images', function (Blueprint $table) {
             $table->id();
-            $table->string('msg_recivenum');
-            $table->string('msg_sendnum');
-            $table->string('msg_title', 30);
-            $table->text('msg_text');
-            $table->enum('msg_sendoption', ['즉시발송', '예약발송']);
+            $table->unsignedBigInteger('message_id');
+            $table->string('path');
             $table->timestamps();
+
+            $table->foreign('message_id')->references('id')->on('messages')->onDelete('cascade');
         });
     }
 
@@ -27,6 +25,7 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('message_images');
     }
+
 };

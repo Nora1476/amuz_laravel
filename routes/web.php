@@ -22,8 +22,10 @@ Route::get('/', function () {
 // Route::get('/message', function () {
 //     return view('message');
 // });
-Route::get('/message', [App\Http\Controllers\Controller::class, "sendMessageForm"])->name('upload.message');
-Route::post('/message', [App\Http\Controllers\Controller::class, "sendUploadMessage"])->name('upload.uploadMessage');
+Route::get('/message', [App\Http\Controllers\MessageController::class, "sendMessageForm"])->name('message');
+// Route::post('/message', [App\Http\Controllers\Controller::class, "sendUploadMessage"])->name('upload.uploadMessage');
+Route::post('/message', [App\Http\Controllers\MessageController::class, 'storeMessage'])->name('messages.store');
+
 
 Route::get('/credit', function () {
     return view('credit');

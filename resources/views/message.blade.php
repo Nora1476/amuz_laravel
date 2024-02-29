@@ -29,7 +29,7 @@
                 </div>
 
                 <hr>
-                <form action="{{ route('upload.uploadMessage') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('messages.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="message_main">
                         <div class="main_left">
@@ -39,6 +39,7 @@
 
                                 <div class="main_left-phone input-group mb-3">
                                     <input type="text" class="form-control" placeholder="휴대폰번호 (숫자만 입력)"
+                                        onfocus="this.placeholder=''" onblur="this.placeholder='휴대폰번호 (숫자만 입력)'"
                                         aria-label="휴대폰번호 (숫자만 입력)" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-secondary" type="button" id="button-addon2">+
                                         추가</button>
@@ -47,7 +48,8 @@
 
                                 <div class="main_left-phonelist mb-3">
                                     <textarea class="form-control" id="message_area" name="msg_recivenum"
-                                        placeholder="번호를 입력하거나 후 엔터 혹은 추가하기를 클릭해 주세요. &#13;&#10;최대 1만 건까지 붙여넣기 가능합니다."></textarea>
+                                        placeholder="번호를 입력하거나 후 엔터 혹은 추가하기를 클릭해 주세요. &#13;&#10;최대 1만 건까지 붙여넣기 가능합니다." onfocus="this.placeholder=''"
+                                        onblur="this.placeholder='번호를 입력하거나 후 엔터 혹은 추가하기를 클릭해 주세요. &#13;&#10;최대 1만 건까지 붙여넣기 가능합니다.'"></textarea>
                                     <div class="phonelist_total">
                                         <div class="phonelist_total_num">총 <span>0</span>명</div>
                                         <button class="phonelist_total_del">모두 삭제</button>
@@ -68,9 +70,8 @@
                                 <select class="form-select form-select-lg mb-3" aria-label="Large select example"
                                     name="msg_sendnum">
                                     <option selected>전송할 발신번호 선택</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="1">0510000000</option>
+                                    <option value="2">01012345678</option>
                                 </select>
                             </div>
                             <hr>
@@ -81,7 +82,8 @@
                                 <div class="typing_content">
 
                                     <input type="text" class="form-control msg_title" name="msg_title"
-                                        placeholder="제목을 입력해주세요. (단문 SMS는 제외, 최대 30byte)">
+                                        placeholder="제목을 입력해주세요. (단문 SMS는 제외, 최대 30byte)" onfocus="this.placeholder=''"
+                                        onblur="this.placeholder='제목을 입력해주세요. (단문 SMS는 제외, 최대 30byte)'">
 
                                     <div class="msg_midcon">
                                         <div class="midcon_status"><span>단문 SMS</span></div>
@@ -96,7 +98,8 @@
                                     {{-- 메세지내용 --}}
                                     <div class="msg_textarea">
                                         <textarea class="form-control msg_text" id="message_area" name="msg_text"
-                                            placeholder="내용을 입력해 주세요. 90byte초과 시 장문 문자로, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다."></textarea>
+                                            placeholder="내용을 입력해 주세요. 90byte초과 시 장문 문자로, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다." onfocus="this.placeholder=''"
+                                            onblur="this.placeholder='내용을 입력해 주세요. 90byte초과 시 장문 문자로, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다.'"></textarea>
                                         <div class="msg_option">
                                             <button class="option">치환코드</button>
                                             <button class="option">템플릿</button>
@@ -117,8 +120,8 @@
                                         <div class="msg_img-wrap" id="upload-container">
 
                                             <label id="custom-upload-button" for="upload_img"></label>
-                                            <input type="file" id="upload_img" accept=".jpg,.jpeg,.png,.gif" multiple
-                                                onchange="validateAndAddFile(this);">
+                                            <input type="file" name="images[]" id="upload_img"
+                                                accept=".jpg,.jpeg,.png,.gif" multiple onchange="validateAndAddFile(this);">
 
                                             <div id="image-preview"></div>
 

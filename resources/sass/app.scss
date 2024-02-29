@@ -19,6 +19,15 @@ a {
     color: #222222;
     text-decoration: none;
 }
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+input:focus::placeholder {
+    color: transparent;
+}
+
+/* Edge */
+input:focus::-ms-input-placeholder {
+    color: transparent;
+}
 
 body {
     min-width: 1920px;
