@@ -43,9 +43,9 @@ class MessageController extends Controller
                 // 메시지와 이미지 사이의 관계를 설정하고 이미지를 저장
                 $message->images()->create(['path' => $imagePath]);
             }
-            return 'Images uploaded successfully.';
+            return redirect()->route('message')->with('success', '파일이 성공적으로 업로드되었습니다.');
         } else {
-            return 'No images selected.';
+            return redirect()->route('message')->with('success', '파일이 성공적으로 업로드되었습니다.');
         }
 
     }

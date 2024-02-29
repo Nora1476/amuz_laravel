@@ -1,6 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+
+        <script>
+            // 페이지가 로드되면 실행되도록 수정
+            document.addEventListener('DOMContentLoaded', function() {
+                var alertDiv = document.querySelector('.alert');
+                setTimeout(function() {
+                    alertDiv.classList.add('slide-up');
+                    setTimeout(function() {
+                        alertDiv.style.display = 'none';
+                    }, 500);
+                }, 3000);
+            });
+        </script>
+    @endif
+
     <div class="message">
         <div class="sub_nav">
             <ul>

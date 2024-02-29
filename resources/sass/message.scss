@@ -1,3 +1,20 @@
+//알림창
+/* 알림창 스타일 */
+.alert {
+    max-height: auto;
+    padding: 20px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 15px;
+    transition: opacity 0.5s, transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+/* 애니메이션 종료 후 알림창 숨김 */
+.slide-up {
+    opacity: 0;
+    transform: translateY(-100%); /* 알림창을 위로 이동시킴 */
+}
 .message {
     //공통
     hr {
