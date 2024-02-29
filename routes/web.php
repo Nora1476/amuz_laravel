@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,13 @@ Route::get('/', function () {
     //app.blade.php
     return view('home');
 });
-Route::get('/message', function () {
-    return view('message');
-});
+
+// Route::get('/message', function () {
+//     return view('message');
+// });
+Route::get('/message', [App\Http\Controllers\Controller::class, "sendMessageForm"])->name('upload.message');
+Route::post('/message', [App\Http\Controllers\Controller::class, "sendUploadMessage"])->name('upload.uploadMessage');
+
 Route::get('/credit', function () {
     return view('credit');
 });

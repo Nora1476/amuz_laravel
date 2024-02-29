@@ -29,9 +29,11 @@
                 </div>
 
                 <hr>
-                <form action="">
+                <form action="{{ route('upload.uploadMessage') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="message_main">
                         <div class="main_left">
+                            {{-- 수신자 번호 --}}
                             <div class="main_left-recivenum">
                                 <h4 class="main_left-tit">수신번호</h4>
 
@@ -41,6 +43,7 @@
                                     <button class="btn btn-outline-secondary" type="button" id="button-addon2">+
                                         추가</button>
                                 </div>
+
 
                                 <div class="main_left-phonelist mb-3">
                                     <textarea class="form-control" id="message_area" name="msg_recivenum"
@@ -57,8 +60,8 @@
                                     <button>최근 전송 내역</button>
                                 </div>
                             </div>
-
                             <hr>
+                            {{-- 발신자번호 --}}
                             <div class="main_left-sendnum">
                                 <h4 class="main_left-tit">발신번호</h4>
 
@@ -70,8 +73,8 @@
                                     <option value="3">Three</option>
                                 </select>
                             </div>
-
                             <hr>
+                            {{-- 메세지타이틀 --}}
                             <div class="main_left-typing">
                                 <h4 class="main_left-tit">메세지 입력</h4>
 
@@ -90,7 +93,7 @@
                                         </div>
                                         <button class="midcon_reset"></button>
                                     </div>
-
+                                    {{-- 메세지내용 --}}
                                     <div class="msg_textarea">
                                         <textarea class="form-control msg_text" id="message_area" name="msg_text"
                                             placeholder="내용을 입력해 주세요. 90byte초과 시 장문 문자로, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다."></textarea>
@@ -108,10 +111,17 @@
                                     </div>
 
                                     <hr>
+                                    {{-- 이미지 파일 --}}
                                     <div class="msg_images">
                                         <h5 class="main_left-tit">이미지 추가</h5>
-                                        <div class="msg_img-wrap">
-                                            <img src="/img/icon/icon11.png"alt="icon11" class="msg_img">
+                                        <div class="msg_img-wrap" id="upload-container">
+
+                                            <label id="custom-upload-button" for="upload_img"></label>
+                                            <input type="file" id="upload_img" accept=".jpg,.jpeg,.png,.gif" multiple
+                                                onchange="validateAndAddFile(this);">
+
+                                            <div id="image-preview"></div>
+
                                         </div>
 
                                         <div class="message_small">
@@ -134,12 +144,12 @@
                     <div class="message_setting">
                         <h4 class="main_left-tit">발송 설정</h4>
                         <div class="message_setting-check">
-                            <input type="radio" class="btn-check" name="options-outlined" id="success-outlined"
-                                autocomplete="off" checked>
+                            <input type="radio" value="즉시발송" class="btn-check" name="msg_sendoption"
+                                id="success-outlined" autocomplete="off" checked>
                             <label class="btn btn-outline-now" for="success-outlined">즉시 발송</label>
 
-                            <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined"
-                                autocomplete="off">
+                            <input type="radio" value="예약발송" class="btn-check" name="msg_sendoption"
+                                id="danger-outlined" autocomplete="off">
                             <label class="btn btn-outline-reverve" for="danger-outlined">예약발송</label>
 
                         </div>
@@ -154,3 +164,61 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        function validateAndAddFile(input) {
+            var files = input.files;
+            var imagePreview = document.getElementById("image-preview");
+
+            // 유효성 검사: 이미지 파일 수가 3개 이하인지 확인
+            if (files.length > 3) {
+                alert("최대 3개의 이미지 파일만 업로드할 수 있습니다.");
+                input.value = ""; // 파일 입력 필드 비우기
+                return;
+            }
+
+            // 유효성 검사: 파일 크기 확인
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var fileSizeInMB = file.size / (1024 * 1024); // 파일 크기를 MB로 변환
+
+                if (fileSizeInMB > 5) { // 5MB 이상의 파일 크기 허용하지 않음
+                    alert("각 이미지 파일의 크기는 최대 5MB를 넘을 수 없습니다.");
+                    input.value = ""; // 파일 입력 필드 비우기
+                    return;
+                }
+            }
+
+            // 파일이 유효한 경우 미리보기 생성
+            imagePreview.innerHTML = ""; // Clear previous previews
+
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    var imageUrl = event.target.result;
+                    var previewContainer = document.createElement("div");
+                    previewContainer.className = "preview-container";
+
+                    var image = document.createElement("img");
+                    image.src = imageUrl;
+
+                    var removeButton = document.createElement("span");
+                    removeButton.innerHTML = "&times;";
+                    removeButton.className = "remove-button";
+                    removeButton.addEventListener("click", function() {
+                        previewContainer.remove();
+                    });
+
+                    previewContainer.appendChild(image);
+                    previewContainer.appendChild(removeButton);
+                    imagePreview.appendChild(previewContainer);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+@endpush
