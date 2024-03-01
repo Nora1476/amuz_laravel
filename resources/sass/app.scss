@@ -6,6 +6,10 @@
 
 // Variables
 @import "variables";
+@import "mixin";
+
+//반응형
+@import "./reactive.scss";
 
 // Bootstrap
 @import "bootstrap/scss/bootstrap";
@@ -30,7 +34,7 @@ input:focus::-ms-input-placeholder {
 }
 
 body {
-    min-width: 1920px;
+    min-width: 1400px;
     background-color: #ffffff;
     font-family: $font !important;
 
@@ -127,6 +131,293 @@ body {
         }
         hr {
             margin: 0;
+        }
+    }
+}
+
+//반응형
+//1400px 이하
+@include desktop {
+    body {
+        min-width: 1024px;
+        //공통 (메세지, 크레딧)
+        .sub_nav {
+            & > ul {
+                min-width: auto;
+                .sub_nav-menu {
+                    font: 18px Pretendard;
+                    font-weight: 600;
+                    padding: 16px 32px;
+                    & > a {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        nav {
+            .container {
+                width: 100%;
+                max-width: 1200px;
+                gap: 200px;
+                .navbar-nav {
+                    gap: 60px;
+                    .nav-item {
+                        .nav-link {
+                            font: 600 20px/1 Pretendard;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+        }
+
+        footer {
+            .navbar {
+                svg {
+                    width: 140px;
+                    height: 42px;
+                }
+
+                .container {
+                    padding: 50px 30px 30px;
+                    .navbar-nav {
+                        .nav-item {
+                            .nav-link {
+                                font: 16px/1 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+            .container.info {
+                padding-top: 30px;
+                padding-bottom: 90px;
+            }
+        }
+    }
+}
+
+//1024px 이하
+@include laptop {
+    body {
+        min-width: 768px;
+        //공통 (메세지, 크레딧)
+        .sub_nav {
+            & > ul {
+                // min-width: auto;
+                .sub_nav-menu {
+                    // font: 18px Pretendard;
+                    // font-weight: 600;
+                    // padding: 16px 32px;
+                    & > a {
+                        // padding: 0;
+                    }
+                }
+            }
+        }
+
+        nav {
+            .container {
+                width: 100%;
+                max-width: 1024px;
+                gap: 200px;
+                .navbar-nav {
+                    gap: 50px;
+                    .nav-item {
+                        .nav-link {
+                            font: 600 20px/1 Pretendard;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+        }
+
+        footer {
+            .navbar {
+                svg {
+                    width: 140px;
+                    height: 42px;
+                }
+
+                .container {
+                    padding: 50px 30px 30px;
+                    .navbar-nav {
+                        .nav-item {
+                            .nav-link {
+                                font: 16px/1 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+            .container.info {
+                padding-top: 30px;
+                padding-bottom: 90px;
+            }
+        }
+    }
+}
+
+@include tablet {
+    body {
+        min-width: 680px;
+        //공통 (메세지, 크레딧)
+        .sub_nav {
+            padding: 14px 0;
+            & > ul {
+                margin: 0;
+                .sub_nav-menu {
+                    font: 16px Pretendard;
+                    font-weight: 600;
+                    padding: 14px 28px;
+                }
+            }
+        }
+
+        nav {
+            .container {
+                width: 100%;
+                max-width: 768px;
+                flex-wrap: nowrap !important;
+                gap: 40px;
+                padding: 0 20px;
+                .navbar-nav {
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    gap: 50px;
+                    .nav-item {
+                        .nav-link {
+                            font: 600 18px/1 Pretendard;
+                        }
+                        &.dropdown {
+                            position: relative;
+                        }
+                        .dropdown-menu.dropdown-menu-end {
+                            position: absolute;
+                            right: 0;
+                            & > a {
+                                font-size: 14px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+        }
+
+        footer {
+            .navbar {
+                svg {
+                    width: 140px;
+                    height: 42px;
+                }
+
+                .container {
+                    padding: 40px 24px 20px;
+                    .navbar-nav {
+                        .nav-item {
+                            .nav-link {
+                                font: 16px/1 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+            .container.info {
+                padding-top: 30px;
+                padding-bottom: 80px;
+            }
+        }
+    }
+}
+
+@include mobile {
+    body {
+        min-width: 360px;
+        //공통 (메세지, 크레딧)
+        .sub_nav {
+            padding: 12px 0;
+            & > ul {
+                margin: 0;
+                .sub_nav-menu {
+                    font: 14px Pretendard;
+                    font-weight: 600;
+                    padding: 12px 20px;
+                }
+            }
+        }
+
+        nav {
+            .container {
+                max-width: 540px;
+                gap: 12px;
+                padding: 0 10px;
+                .navbar-brand {
+                    & > img {
+                        width: 120px;
+                        height: 32px;
+                    }
+                }
+                .navbar-nav {
+                    justify-content: center;
+                    gap: 14px;
+                    .nav-item {
+                        .nav-link {
+                            font: 600 16px/1 Pretendard;
+                        }
+
+                        .dropdown-menu.dropdown-menu-end {
+                            width: 50px;
+                            & > a {
+                                font-size: 14px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+        }
+
+        footer {
+            .navbar {
+                svg {
+                    width: 130px;
+                    height: 32px;
+                }
+
+                .container {
+                    padding: 40px 20px 20px;
+                    .navbar-nav {
+                        .nav-item {
+                            .nav-link {
+                                font: 14px/1 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+            .container.info {
+                padding-top: 30px;
+                padding-bottom: 80px;
+                & > p {
+                    font-size: 14px;
+                    & > span {
+                        display: block;
+                    }
+                }
+            }
         }
     }
 }

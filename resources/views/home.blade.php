@@ -8,8 +8,15 @@
                     <small>인터넷 문자 메시지 전송의 모든 것</small>
                     <h1>가장 빠르고 안정적인 <br> 문자 서비스 SENDGO</h1>
                     <div class="btn_wrap">
-                        <button class="sec__btn"><a href="">회원가입</a></button>
-                        <button class="sec__btn"><a href="">로그인</a></button>
+                        @guest
+                            @if (Route::has('login'))
+                                <button class="sec__btn"><a href="{{ route('login') }}">{{ __('로그인') }}</a></button>
+                            @endif
+                            @if (Route::has('register'))
+                                <button class="sec__btn"><a href="{{ route('register') }}">{{ __('회원가입') }}</a></button>
+                            @endif
+                        @else
+                        @endguest
                     </div>
                 </div>
             </div>

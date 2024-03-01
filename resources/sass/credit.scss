@@ -121,3 +121,291 @@
         }
     }
 }
+
+//반응형
+//1400px 이하
+@include desktop {
+    .credit {
+        min-width: 1350px;
+        .credit_con {
+            padding: 100px 20px 180px;
+            .credit_con_tit {
+                gap: 16px;
+                margin-bottom: 50px;
+
+                & > h2 {
+                    font: bold 36px/1.2 Pretendard;
+                }
+                & > small {
+                    font: 18px/1.2 Pretendard;
+                }
+            }
+
+            .credit_con_cards {
+                .credit_card {
+                    padding: 38px 30px;
+
+                    .option_top {
+                        gap: 16px;
+                        margin-bottom: 34px;
+                        .option_top-won {
+                            font: bold 30px/1.2 Pretendard;
+                        }
+                        .option_top-detail {
+                            font: 17px/1.5 Pretendard;
+                        }
+                    }
+
+                    .option_mid {
+                        gap: 20px;
+                        margin-bottom: 38px;
+                        .option_mid-total {
+                            gap: 42px;
+                            & > h4 {
+                                font: 22px/1.4 Pretendard;
+                                font-weight: 700;
+                            }
+                            & > small {
+                                font: 12px/19px Pretendard;
+                                font-weight: 700;
+                                padding: 6px 8px;
+                                border-radius: 16px;
+                            }
+                        }
+                        .option_mid-detail {
+                            gap: 14px;
+                            padding: 14px;
+                            .ditail_con {
+                                & > span:first-child {
+                                    font: 15px/1.4 Pretendard;
+                                }
+                                & > span:nth-child(2) {
+                                    font: 16px/28px Pretendard;
+                                }
+                            }
+                        }
+                    }
+
+                    .option_btm {
+                        font: 18px/24px Pretendard;
+                        padding: 16px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@include laptop {
+    .credit {
+        min-width: 910px;
+        .credit_con {
+            padding: 90px 20px 170px;
+            .credit_con_tit {
+                gap: 14px;
+                margin-bottom: 48px;
+
+                & > h2 {
+                    font: bold 32px/1.2 Pretendard;
+                }
+                & > small {
+                    font: 17px/1.2 Pretendard;
+                }
+            }
+
+            .credit_con_cards {
+                grid-template-columns: repeat(3, auto);
+                gap: 20px;
+                .credit_card {
+                    padding: 34px 22px;
+
+                    .option_top {
+                        gap: 14px;
+                        margin-bottom: 24px;
+                        .option_top-won {
+                            font: bold 26px/1.2 Pretendard;
+                        }
+                        .option_top-detail {
+                            font: 16px/1.5 Pretendard;
+                        }
+                    }
+
+                    .option_mid {
+                        gap: 18px;
+                        margin-bottom: 30px;
+                        .option_mid-total {
+                            gap: 36px;
+                            & > h4 {
+                                font: 20px/1.4 Pretendard;
+                                font-weight: 700;
+                            }
+                            & > small {
+                                font: 12px/1.3 Pretendard;
+                                font-weight: 700;
+                                padding: 6px 8px;
+                                border-radius: 14px;
+                            }
+                        }
+                        .option_mid-detail {
+                            gap: 12px;
+                            padding: 12px;
+                            .ditail_con {
+                                & > span:first-child {
+                                    font: 14px/1.4 Pretendard;
+                                }
+                                & > span:nth-child(2) {
+                                    font: 15px/1.4 Pretendard;
+                                }
+                            }
+                        }
+                    }
+
+                    .option_btm {
+                        font: 17px/1.4 Pretendard;
+                        padding: 15px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .credit {
+        min-width: 540px;
+        .credit_con {
+            padding: 80px 20px 150px;
+            .credit_con_tit {
+                gap: 12px;
+                margin-bottom: 40px;
+
+                & > h2 {
+                    font: bold 28px/1.2 Pretendard;
+                }
+                & > small {
+                    font: 16px/1.2 Pretendard;
+                }
+            }
+
+            .credit_con_cards {
+                grid-template-columns: repeat(2, auto);
+                gap: 18px;
+                .credit_card {
+                    padding: 32px 20px;
+
+                    .option_top {
+                        gap: 12px;
+                        margin-bottom: 22px;
+                        .option_top-won {
+                            font: bold 24px/1.2 Pretendard;
+                        }
+                        .option_top-detail {
+                            font: 14px/1.5 Pretendard;
+                        }
+                    }
+
+                    .option_mid {
+                        gap: 16px;
+                        margin-bottom: 24px;
+                        .option_mid-total {
+                            gap: 34px;
+                            & > h4 {
+                                font: 18px/1.4 Pretendard;
+                                font-weight: 700;
+                            }
+                            & > small {
+                                font: 12px/1.3 Pretendard;
+                                font-weight: 700;
+                            }
+                        }
+                        .option_mid-detail {
+                            gap: 10px;
+                            padding: 10px;
+                            .ditail_con {
+                                & > span:first-child {
+                                    font: 14px/1.4 Pretendard;
+                                }
+                                & > span:nth-child(2) {
+                                    font: 15px/1.4 Pretendard;
+                                }
+                            }
+                        }
+                    }
+
+                    .option_btm {
+                        font: 16px/1.4 Pretendard;
+                        padding: 14px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .credit {
+        min-width: 360px;
+        .credit_con {
+            padding: 60px 20px 100px;
+            .credit_con_tit {
+                gap: 10px;
+                margin-bottom: 30px;
+
+                & > h2 {
+                    font: bold 24px/1.2 Pretendard;
+                }
+                & > small {
+                    font: 14px/1.2 Pretendard;
+                }
+            }
+
+            .credit_con_cards {
+                grid-template-columns: repeat(1, auto);
+                gap: 20px;
+                .credit_card {
+                    padding: 30px 20px;
+
+                    .option_top {
+                        gap: 10px;
+                        margin-bottom: 20px;
+                        .option_top-won {
+                            font: bold 22px/1.2 Pretendard;
+                        }
+                        .option_top-detail {
+                            font: 12px/1.5 Pretendard;
+                        }
+                    }
+
+                    .option_mid {
+                        gap: 14px;
+                        margin-bottom: 20px;
+                        .option_mid-total {
+                            gap: 30px;
+                            & > h4 {
+                                font: 17px/1.4 Pretendard;
+                                font-weight: 700;
+                            }
+                            & > small {
+                                font: 12px/1.3 Pretendard;
+                                font-weight: 700;
+                            }
+                        }
+                        .option_mid-detail {
+                            .ditail_con {
+                                & > span:first-child {
+                                    font: 14px/1.4 Pretendard;
+                                }
+                                & > span:nth-child(2) {
+                                    font: 14px/1.4 Pretendard;
+                                }
+                            }
+                        }
+                    }
+
+                    .option_btm {
+                        font: 15px/1.4 Pretendard;
+                        padding: 12px 0;
+                    }
+                }
+            }
+        }
+    }
+}

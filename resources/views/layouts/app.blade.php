@@ -45,7 +45,7 @@
                         <!-- Right Side Of Navbar -->
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            {{-- @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('로그인') }}</a>
                                 </li>
@@ -55,7 +55,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('회원가입') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -150,7 +150,7 @@
             </nav>
             <hr />
             <div class="container info">
-                <p>문의 사항이 있으신가요? 텔레그램을 통해 고객센터로 문의 해 보세요.</p>
+                <p>문의 사항이 있으신가요? <span>텔레그램을 통해 고객센터로 문의 해 보세요.</span></p>
                 <span>Telegram : @shdevelope</span>
             </div>
         </footer>

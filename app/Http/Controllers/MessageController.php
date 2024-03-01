@@ -44,9 +44,8 @@ class MessageController extends Controller
                 $message->images()->create(['path' => $imagePath]);
             }
             return redirect()->route('message')->with('success', '파일이 성공적으로 업로드되었습니다.');
-        } else {
-            return redirect()->route('message')->with('success', '파일이 성공적으로 업로드되었습니다.');
         }
+        return redirect()->route('message')->with('success', '파일이 성공적으로 업로드되었습니다.');
 
     }
 }
