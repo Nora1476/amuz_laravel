@@ -15,6 +15,7 @@
     opacity: 0;
     transform: translateY(-100%); /* 알림창을 위로 이동시킴 */
 }
+
 .message {
     //공통
     hr {
@@ -48,7 +49,7 @@
             //타이틀공통
             .main_left-tit {
                 font: 22px/26px Pretendard;
-                font-weight: 700;
+                font-weight: bold;
                 letter-spacing: 0px;
                 color: #000000;
                 margin-bottom: 16px;
@@ -458,6 +459,766 @@
                 background: #4f44f0 0% 0% no-repeat padding-box;
                 border-radius: 8px;
                 border: 0;
+            }
+        }
+    }
+}
+
+//반응형
+//1400px 이하
+@include desktop {
+    .message {
+        //공통
+        hr {
+            margin: 30px auto;
+        }
+        .form-control {
+            padding: 18px;
+        }
+
+        .message_con {
+            min-width: 1220px;
+            padding: 54px 0 180px;
+            .messege_container {
+                border-radius: 22px;
+                padding: 52px 90px 70px;
+
+                //타이틀공통
+                .main_left-tit {
+                    font: 22px/26px Pretendard;
+                    font-weight: bold;
+                    margin-bottom: 16px;
+                }
+
+                .message_tit {
+                    font: 36px/1.6 Pretendard;
+                    font-weight: bold;
+                    margin-bottom: 34px;
+                }
+
+                .massage_tabs {
+                    gap: 15px;
+                    margin-bottom: 30px;
+
+                    .tab {
+                        font: 20px/1.4 Pretendard;
+                        padding: 18px 0;
+                    }
+                }
+
+                .message_small {
+                    gap: 7px;
+                    font: 15px/1.2 Pretendard;
+                }
+
+                .message_main {
+                    gap: 66px;
+
+                    .main_left {
+                        .main_left-recivenum {
+                            .main_left-phone {
+                                gap: 10px;
+                                .btn-outline-secondary {
+                                    padding: 18px 28px;
+                                    font: 18px/24px Pretendard;
+                                }
+                            }
+                            .main_left-phonelist {
+                                .form-control {
+                                    min-height: 230px;
+                                }
+                                .phonelist_total {
+                                    padding: 18px;
+                                    .phonelist_total_num {
+                                        font: 18px/21px Pretendard;
+                                        font-weight: 600;
+                                    }
+                                    .phonelist_total_del {
+                                        font: 16px/21px Pretendard;
+                                    }
+                                }
+                            }
+                            .btn_wrap {
+                                & > button {
+                                    font: 16px/1.4 Pretendard;
+                                    padding: 10px 0;
+                                    &::before {
+                                        width: 31px;
+                                        height: 31px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .main_left-sendnum {
+                            .form-select {
+                                font: 18px/1.4 Pretendard;
+                            }
+                            .form-select-lg {
+                                background-size: 24px 24px;
+                            }
+                        }
+
+                        .main_left-typing {
+                            h5 {
+                                font-size: 18px;
+                            }
+                            .typing_content {
+                                padding: 22px;
+                                .form-control.msg_title {
+                                    margin-bottom: 16px;
+                                }
+                                .msg_midcon {
+                                    margin-bottom: 16px;
+                                    gap: 10px;
+                                    .midcon_status {
+                                        & > span {
+                                            font: 16px/1.4 Pretendard;
+                                            padding: 8px 16px;
+                                            border-radius: 24px;
+                                        }
+                                    }
+                                    .midcon_byte {
+                                        font: 16px/1.4 Pretendard;
+                                        & > span:first-child {
+                                            font: 16px/1.4 Pretendard;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .midcon_reset {
+                                        width: 34px;
+                                        height: 34px;
+                                    }
+                                }
+                                .msg_textarea {
+                                    .msg_text {
+                                        min-height: 390px;
+                                    }
+                                    .msg_option {
+                                        gap: 10px;
+                                        padding: 18px;
+                                        & > button {
+                                            font-size: 15px;
+                                            padding: 12px 24px;
+                                            border-radius: 22px;
+                                        }
+                                    }
+                                }
+                                .msg_images {
+                                    gap: 15px;
+
+                                    .message_small {
+                                        font: 14px/1.4 Pretendard;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .main_right {
+                        .main_right-text {
+                            max-height: 770px;
+                            padding: 36px 34px;
+                        }
+                    }
+                }
+
+                .message_setting {
+                    .message_setting-check {
+                        gap: 16px;
+                        .btn {
+                            gap: 8px;
+                            padding: 20px 96px 20px 66px;
+                            font: 20px/1.4 Pretendard;
+                            font-weight: 600;
+
+                            &::before {
+                                width: 31px;
+                                height: 31px;
+                            }
+                        }
+                    }
+                }
+
+                .massage_send {
+                    font: 20px/1.4 Pretendard;
+                    padding: 20px 0;
+                }
+            }
+        }
+    }
+}
+//1024px 이하
+@include laptop {
+    .message {
+        //공통
+        hr {
+            margin: 28px auto;
+        }
+        .form-control {
+            font-size: 16px;
+            padding: 18px;
+        }
+
+        .message_con {
+            min-width: 860px;
+            padding: 50px 20px 160px;
+            .messege_container {
+                border-radius: 22px;
+                padding: 55px 40px 60px;
+
+                //타이틀공통
+                .main_left-tit {
+                    font: 22px/1.4 Pretendard;
+                    font-weight: bold;
+                    margin-bottom: 14px;
+                }
+
+                .message_tit {
+                    font: 32px/1.6 Pretendard;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+
+                .massage_tabs {
+                    gap: 14px;
+                    margin-bottom: 28px;
+
+                    .tab {
+                        font: 18px/1.4 Pretendard;
+                        padding: 16px 0;
+                    }
+                }
+
+                .message_small {
+                    gap: 6px;
+                    font: 14px/1.2 Pretendard;
+                }
+
+                .message_main {
+                    grid-template-columns: 1fr 300px;
+                    gap: 20px;
+
+                    .main_left {
+                        .main_left-recivenum {
+                            .main_left-phone {
+                                gap: 8px;
+                                .btn-outline-secondary {
+                                    padding: 16px 24px;
+                                    font: 17px/1.4 Pretendard;
+                                }
+                            }
+                            .main_left-phonelist {
+                                .form-control {
+                                    min-height: 220px;
+                                }
+                                .phonelist_total {
+                                    padding: 16px;
+                                    .phonelist_total_num {
+                                        font: 17px/21px Pretendard;
+                                        font-weight: 600;
+                                    }
+                                    .phonelist_total_del {
+                                        font: 15px/21px Pretendard;
+                                    }
+                                }
+                            }
+                            .btn_wrap {
+                                & > button {
+                                    font: 15px/1.4 Pretendard;
+                                    padding: 14px 0;
+                                    &::before {
+                                        width: 32px;
+                                        height: 33px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .main_left-sendnum {
+                            .form-select {
+                                font: 17px/1.4 Pretendard;
+                            }
+                            .form-select-lg {
+                                background-size: 24px 24px;
+                            }
+                        }
+
+                        .main_left-typing {
+                            h5 {
+                                font-size: 17px;
+                            }
+                            .typing_content {
+                                padding: 20px;
+                                .form-control.msg_title {
+                                    margin-bottom: 14px;
+                                }
+                                .msg_midcon {
+                                    margin-bottom: 14px;
+                                    gap: 8px;
+                                    .midcon_status {
+                                        & > span {
+                                            font: 15px/1.4 Pretendard;
+                                            padding: 8px 14px;
+                                            border-radius: 22px;
+                                        }
+                                    }
+                                    .midcon_byte {
+                                        font: 15px/1.4 Pretendard;
+                                        & > span:first-child {
+                                            font: 15px/1.4 Pretendard;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .midcon_reset {
+                                        width: 32px;
+                                        height: 32px;
+                                    }
+                                }
+                                .msg_textarea {
+                                    .msg_text {
+                                        min-height: 360px;
+                                    }
+                                    .msg_option {
+                                        gap: 8px;
+                                        padding: 16px;
+                                        & > button {
+                                            font-size: 14px;
+                                            padding: 10px 22px;
+                                            border-radius: 21px;
+                                        }
+                                    }
+                                }
+                                .msg_images {
+                                    gap: 14px;
+
+                                    .message_small {
+                                        font: 13px/1.4 Pretendard;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .main_right {
+                        .main_right-text {
+                            max-height: 500px;
+                            padding: 30px 20px;
+                        }
+                    }
+                }
+
+                .message_setting {
+                    .message_setting-check {
+                        gap: 15px;
+                        .btn {
+                            gap: 8px;
+                            padding: 16px 66px 16px 46px;
+                            font: 18px/1.4 Pretendard;
+                            font-weight: 600;
+
+                            &::before {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+
+                .massage_send {
+                    font: 18px/1.4 Pretendard;
+                    padding: 18px 0;
+                }
+            }
+        }
+    }
+}
+//786px 이하
+@include tablet {
+    .message {
+        //공통
+        hr {
+            margin: 24px auto;
+        }
+        .form-control {
+            font-size: 14px;
+            padding: 12px;
+        }
+
+        .message_con {
+            min-width: 540px;
+            padding: 48px 10px 140px;
+            .messege_container {
+                border-radius: 20px;
+                padding: 50px 10px; //타이틀공통
+                .main_left-tit {
+                    font: 20px/1.4 Pretendard;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                }
+
+                .message_tit {
+                    font: 28px/1.6 Pretendard;
+                    font-weight: bold;
+                    margin-bottom: 28px;
+                }
+
+                .massage_tabs {
+                    gap: 12px;
+                    margin-bottom: 24px;
+
+                    .tab {
+                        font: 16px/1.4 Pretendard;
+                        padding: 14px 0;
+                    }
+                }
+
+                .message_small {
+                    gap: 4px;
+                    font: 14px/1.2 Pretendard;
+                }
+
+                .message_main {
+                    grid-template-columns: 1fr;
+                    gap: 18px;
+
+                    .main_left {
+                        .main_left-recivenum {
+                            .main_left-phone {
+                                gap: 6px;
+                                .btn-outline-secondary {
+                                    padding: 14px 20px;
+                                    font: 16px/1.4 Pretendard;
+                                }
+                            }
+                            .main_left-phonelist {
+                                .form-control {
+                                    min-height: 240px;
+                                }
+                                .phonelist_total {
+                                    padding: 15px;
+                                    .phonelist_total_num {
+                                        font: 15px/1.4 Pretendard;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                            .btn_wrap {
+                                & > button {
+                                    font: 15px/1.4 Pretendard;
+                                    padding: 12px 0;
+                                    &::before {
+                                        width: 28px;
+                                        height: 28px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .main_left-sendnum {
+                            .form-select {
+                                font: 16px/1.4 Pretendard;
+                            }
+                            .form-select-lg {
+                                background-size: 22px 22px;
+                            }
+                        }
+
+                        .main_left-typing {
+                            h5 {
+                                font-size: 16px;
+                            }
+                            .typing_content {
+                                padding: 18px;
+                                .form-control.msg_title {
+                                    margin-bottom: 12px;
+                                }
+                                .msg_midcon {
+                                    margin-bottom: 12px;
+                                    // gap: 8px;
+                                    .midcon_status {
+                                        & > span {
+                                            font: 14px/1.4 Pretendard;
+                                            padding: 8px 12px;
+                                            border-radius: 20px;
+                                        }
+                                    }
+                                    .midcon_byte {
+                                        font: 14px/1.4 Pretendard;
+                                        & > span:first-child {
+                                            font: 14px/1.4 Pretendard;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .midcon_reset {
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+                                }
+                                .msg_textarea {
+                                    .msg_text {
+                                        min-height: 300px;
+                                    }
+                                    .msg_option {
+                                        gap: 8px;
+                                        padding: 14px;
+                                        & > button {
+                                            font-size: 14px;
+                                            padding: 10px 22px;
+                                            border-radius: 20px;
+                                        }
+                                    }
+                                }
+                                .msg_images {
+                                    gap: 12px;
+
+                                    .message_small {
+                                        font: 13px/1.4 Pretendard;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .main_right {
+                        display: flex;
+                        justify-content: center;
+                        .main_right-text {
+                            width: 300px;
+                            height: 500px;
+                            padding: 30px 20px;
+                        }
+                    }
+                }
+
+                .message_setting {
+                    .message_setting-check {
+                        gap: 14px;
+                        .btn {
+                            gap: 8px;
+                            padding: 14px 50px 14px 36px;
+                            font: 16px/1.4 Pretendard;
+                            font-weight: 600;
+
+                            &::before {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+
+                .massage_send {
+                    font: 16px/1.4 Pretendard;
+                    padding: 16px 0;
+                }
+            }
+        }
+    }
+}
+//540px 이하
+@include mobile {
+    .message {
+        //공통
+        hr {
+            margin: 20px auto;
+        }
+        .form-control {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        .message_con {
+            min-width: 360px;
+            padding: 40px 10px 100px;
+            .messege_container {
+                border-radius: 18px;
+                padding: 50px 10px; //타이틀공통
+                .main_left-tit {
+                    font: 18px/1.4 Pretendard;
+                    font-weight: 700;
+                    margin-bottom: 8px;
+                }
+
+                .message_tit {
+                    font: 24px/1.6 Pretendard;
+                    font-weight: bold;
+                    margin-bottom: 24px;
+                }
+
+                .massage_tabs {
+                    gap: 10px;
+                    margin-bottom: 20px;
+
+                    .tab {
+                        font: 14px/1.4 Pretendard;
+                        padding: 14px 0;
+                    }
+                }
+
+                .message_small {
+                    gap: 4px;
+                    font: 12px/1.2 Pretendard;
+                    word-break: keep-all;
+                    & > span {
+                        align-items: flex-start;
+                        &::before {
+                            margin-top: 4px;
+                        }
+                    }
+                }
+
+                .message_main {
+                    gap: 16px;
+
+                    .main_left {
+                        .main_left-recivenum {
+                            .main_left-phone {
+                                gap: 4px;
+                                .btn-outline-secondary {
+                                    padding: 12px 16px;
+                                    font: 12px/1.4 Pretendard;
+                                }
+                            }
+                            .main_left-phonelist {
+                                .form-control {
+                                    min-height: 240px;
+                                }
+                                .phonelist_total {
+                                    padding: 12px;
+                                    .phonelist_total_num {
+                                        font: 14px/1.4 Pretendard;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                            .btn_wrap {
+                                & > button {
+                                    font: 14px/1.4 Pretendard;
+                                    padding: 10px;
+                                    word-break: keep-all;
+                                    &::before {
+                                        width: 26px;
+                                        height: 26px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .main_left-sendnum {
+                            .form-select {
+                                font: 14px/1.4 Pretendard;
+                            }
+                            .form-select-lg {
+                                background-size: 20px 20px;
+                                padding: 12px;
+                            }
+                        }
+
+                        .main_left-typing {
+                            h5 {
+                                font-size: 15px;
+                            }
+                            .typing_content {
+                                padding: 10px;
+                                .form-control.msg_title {
+                                    margin-bottom: 12px;
+                                }
+                                .msg_midcon {
+                                    margin-bottom: 10px;
+                                    gap: 6px;
+                                    .midcon_status {
+                                        & > span {
+                                            font: 12px/1.4 Pretendard;
+                                            padding: 8px 10px;
+                                            border-radius: 18px;
+                                        }
+                                    }
+                                    .midcon_byte {
+                                        font: 12px/1.4 Pretendard;
+                                        & > span:first-child {
+                                            font: 12px/1.4 Pretendard;
+                                            font-weight: 600;
+                                        }
+                                    }
+                                    .midcon_reset {
+                                        width: 28px;
+                                        height: 28px;
+                                    }
+                                }
+                                .msg_textarea {
+                                    .msg_text {
+                                        min-height: 280;
+                                        word-break: keep-all;
+                                    }
+                                    .msg_option {
+                                        gap: 6px;
+                                        padding: 12px;
+                                        & > button {
+                                            font-size: 13px;
+                                            padding: 10px 12px;
+                                            border-radius: 10px;
+                                        }
+                                    }
+                                }
+                                .msg_images {
+                                    gap: 10px;
+                                    #upload-container {
+                                        #custom-upload-button {
+                                            width: 80px; /* 이미지 크기에 맞게 조정 */
+                                            height: 80px; /* 이미지 크기에 맞게 조정 */
+                                        }
+                                        #image-preview {
+                                            display: grid;
+                                            grid-template-columns: repeat(
+                                                3,
+                                                1fr
+                                            );
+                                            gap: 10px;
+                                            .preview-container {
+                                                width: 80px;
+                                                height: 80px;
+                                            }
+                                        }
+                                    }
+                                    .message_small {
+                                        font: 12px/1.4 Pretendard;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .main_right {
+                        .main_right-text {
+                            width: 280px;
+                            height: 400px;
+                            padding: 20px;
+                        }
+                    }
+                }
+
+                .message_setting {
+                    .message_setting-check {
+                        gap: 12px;
+                        .btn {
+                            gap: 6px;
+                            padding: 12px 20px 12px 16px;
+                            font: 14px/1.4 Pretendard;
+                            font-weight: 600;
+
+                            &::before {
+                                width: 28px;
+                                height: 28px;
+                            }
+                        }
+                    }
+                }
+
+                .massage_send {
+                    font: 14px/1.4 Pretendard;
+                    padding: 14px 0;
+                }
             }
         }
     }

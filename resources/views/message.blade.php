@@ -24,10 +24,10 @@
         <div class="sub_nav">
             <ul>
                 {{-- active 추가 스타일 변경 --}}
-                <li class="sub_nav-menu active"><a href="">메세지 전송</a></li>
-                <li class="sub_nav-menu"><a href="">발신번호 관리</a></li>
-                <li class="sub_nav-menu"><a href="">주소록 관리</a></li>
-                <li class="sub_nav-menu"><a href="">발송 결과</a></li>
+                <li class="sub_nav-menu active"><a href="">메세지 <span> 전송</span></a></li>
+                <li class="sub_nav-menu"><a href="">발신번호 <span> 관리</span></a></li>
+                <li class="sub_nav-menu"><a href="">주소록 <span> 관리</span></a></li>
+                <li class="sub_nav-menu"><a href="">발송<span> 결과</span></a></li>
             </ul>
         </div>
 
@@ -78,7 +78,7 @@
                                 <div class="btn_wrap">
                                     <button>주소록 불러오기</button>
                                     <button>파일 불러오기</button>
-                                    <button>최근 전송 내역</button>
+                                    <button>최근 전송내역</button>
                                 </div>
                             </div>
                             <hr>
@@ -117,8 +117,9 @@
                                     {{-- 메세지내용 --}}
                                     <div class="msg_textarea">
                                         <textarea class="form-control msg_text" id="message_area" name="msg_text"
-                                            placeholder="내용을 입력해 주세요. 90byte초과 시 장문 문자로, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다." onfocus="this.placeholder=''"
-                                            onblur="this.placeholder='내용을 입력해 주세요. 90byte초과 시 장문 문자로, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다.'"></textarea>
+                                            placeholder="내용을 입력해 주세요. 90byte초과 시 장문 문자로 자동 전환되며, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다."
+                                            onfocus="this.placeholder=''"
+                                            onblur="this.placeholder='내용을 입력해 주세요. 90byte초과 시 장문 문자로 자동 전환되며, &#13;&#10;이미지 추가 시 문자로 자동 전환 횝니다.'"></textarea>
                                         <div class="msg_option">
                                             <button class="option">치환코드</button>
                                             <button class="option">템플릿</button>

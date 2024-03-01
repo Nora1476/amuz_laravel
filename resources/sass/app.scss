@@ -207,14 +207,10 @@ body {
         //공통 (메세지, 크레딧)
         .sub_nav {
             & > ul {
-                // min-width: auto;
                 .sub_nav-menu {
-                    // font: 18px Pretendard;
-                    // font-weight: 600;
-                    // padding: 16px 32px;
-                    & > a {
-                        // padding: 0;
-                    }
+                    font: 18px Pretendard;
+                    font-weight: 600;
+                    padding: 16px 32px;
                 }
             }
         }
@@ -351,7 +347,11 @@ body {
                 .sub_nav-menu {
                     font: 14px Pretendard;
                     font-weight: 600;
-                    padding: 12px 20px;
+                    padding: 10px 20px;
+                    text-align: center;
+                    & > a {
+                        word-break: keep-all;
+                    }
                 }
             }
         }
