@@ -67,21 +67,48 @@ body {
         }
     }
 
-    nav {
-        height: 80px;
-        .container {
-            gap: 256px;
-            .navbar-brand {
-                & > img {
-                    width: 142px;
-                    height: 44px;
+    header {
+        nav {
+            &#navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 99;
+                width: 100%;
+                height: 80px;
+                background-color: #000000;
+                transition: background-color 0.3s;
+                border-bottom: 1px solid #727b88;
+
+                &.scrolled {
+                    background-color: white; /* 스크롤되면 흰색 배경으로 변경 */
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+                    transform: translateY(0);
+                    .container {
+                        .nav-item {
+                            .nav-link {
+                                color: #000000 !important;
+                            }
+                        }
+                    }
                 }
-            }
-            .navbar-nav {
-                gap: 80px;
-                .nav-item {
-                    .nav-link {
-                        font: normal normal 600 20px/24px Pretendard;
+
+                .container {
+                    gap: 256px;
+                    .navbar-brand {
+                        & > svg {
+                            width: 142px;
+                            height: 44px;
+                        }
+                    }
+                    .navbar-nav {
+                        gap: 80px;
+                        .nav-item {
+                            .nav-link {
+                                font: normal normal 600 20px/24px Pretendard;
+                                color: #d9d9d9;
+                            }
+                        }
                     }
                 }
             }
@@ -89,30 +116,36 @@ body {
     }
 
     main {
+        margin-top: 80px;
     }
 
     footer {
-        background-color: #222222;
         color: #ededed;
-        .navbar {
-            height: auto;
-            padding: 0;
-            svg {
-                width: 142px;
-                height: 44px;
-            }
+        background-color: #222222;
+        nav {
+            background-color: #222222;
+            &.navbar {
+                height: auto;
+                padding: 0;
+                svg {
+                    width: 142px;
+                    height: 44px;
+                }
 
-            .container {
-                padding: 56px 40px 36px;
-                .navbar-nav {
-                    .nav-item {
-                        .nav-link {
-                            color: #ededed;
-                            font: 16px/33px Pretendard;
-                            letter-spacing: 0px;
-                            &:hover,
-                            &:focus {
+                .container {
+                    padding: 56px 40px 36px;
+                    gap: 480px;
+                    .navbar-nav {
+                        gap: 80px;
+                        .nav-item {
+                            .nav-link {
                                 color: #ededed;
+                                font: 16px/33px Pretendard;
+                                letter-spacing: 0px;
+                                &:hover,
+                                &:focus {
+                                    color: #ededed;
+                                }
                             }
                         }
                     }

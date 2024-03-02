@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_menu')
 
 @section('content')
     @if (session('success'))
@@ -130,7 +130,10 @@
                                     <hr>
                                     <div class="msg_addinclude">
                                         <h5 class="main_left-tit">광고성 문자(080 수신거부번호 포함)</h5>
-                                        <img src="/img/icon/icon14.png" alt="icon14">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckDefault">
+                                        </div>
                                     </div>
 
                                     <hr>

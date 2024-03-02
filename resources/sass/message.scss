@@ -314,6 +314,12 @@
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: center;
+                                .form-switch {
+                                    & > input {
+                                        width: 58px;
+                                        height: 30px;
+                                    }
+                                }
                             }
                             .msg_images {
                                 display: flex;
