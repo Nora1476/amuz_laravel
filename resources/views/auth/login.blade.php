@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+
+<style>
+    .login {
+        padding: 100px 0;
+    }
+</style>
+
 @section('content')
     <div class="container login">
         <div class="row justify-content-center">
