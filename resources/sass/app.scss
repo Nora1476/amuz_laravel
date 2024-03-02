@@ -79,6 +79,7 @@ body {
                 background-color: #000000;
                 transition: background-color 0.3s;
                 border-bottom: 1px solid #727b88;
+                padding: 0;
 
                 &.scrolled {
                     background-color: white; /* 스크롤되면 흰색 배경으로 변경 */
@@ -94,6 +95,7 @@ body {
                 }
 
                 .container {
+                    height: 100%;
                     gap: 256px;
                     .navbar-brand {
                         & > svg {
@@ -101,9 +103,22 @@ body {
                             height: 44px;
                         }
                     }
+                    .navbar-collapse {
+                        height: 100%;
+                    }
                     .navbar-nav {
-                        gap: 80px;
+                        height: 100%;
+                        align-items: center;
+                        gap: 0;
                         .nav-item {
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 0 70px;
+                            &.link_selected {
+                                border-bottom: 2px solid #4e43ed;
+                            }
                             .nav-link {
                                 font: normal normal 600 20px/24px Pretendard;
                                 color: #d9d9d9;
@@ -187,17 +202,13 @@ body {
                 }
             }
         }
-
-        nav {
-            .container {
-                width: 100%;
-                max-width: 1200px;
-                gap: 200px;
-                .navbar-nav {
-                    gap: 60px;
-                    .nav-item {
-                        .nav-link {
-                            font: 600 20px/1 Pretendard;
+        header {
+            nav {
+                &#navbar {
+                    .container {
+                        gap: 200px;
+                        .navbar-nav {
+                            gap: 80px;
                         }
                     }
                 }
@@ -248,16 +259,20 @@ body {
             }
         }
 
-        nav {
-            .container {
-                width: 100%;
-                max-width: 1024px;
-                gap: 200px;
-                .navbar-nav {
-                    gap: 50px;
-                    .nav-item {
-                        .nav-link {
-                            font: 600 20px/1 Pretendard;
+        header {
+            nav {
+                &#navbar {
+                    .container {
+                        width: 100%;
+                        max-width: 1024px;
+                        gap: 200px;
+                        .navbar-nav {
+                            gap: 50px;
+                            .nav-item {
+                                .nav-link {
+                                    font: 600 20px/1 Pretendard;
+                                }
+                            }
                         }
                     }
                 }
@@ -309,30 +324,34 @@ body {
             }
         }
 
-        nav {
-            .container {
-                width: 100%;
-                max-width: 768px;
-                flex-wrap: nowrap !important;
-                gap: 40px;
-                padding: 0 20px;
-                .navbar-nav {
-                    flex-direction: row;
-                    justify-content: flex-end;
-                    gap: 50px;
-                    .nav-item {
-                        .nav-link {
-                            font: 600 18px/1 Pretendard;
-                        }
-                        &.dropdown {
-                            position: relative;
-                        }
-                        .dropdown-menu.dropdown-menu-end {
-                            position: absolute;
-                            right: 0;
-                            & > a {
-                                font-size: 14px;
-                                font-weight: bold;
+        header {
+            nav {
+                &#navbar {
+                    .container {
+                        width: 100%;
+                        max-width: 768px;
+                        flex-wrap: nowrap !important;
+                        gap: 40px;
+                        padding: 0 20px;
+                        .navbar-nav {
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            gap: 50px;
+                            .nav-item {
+                                .nav-link {
+                                    font: 600 18px/1 Pretendard;
+                                }
+                                &.dropdown {
+                                    position: relative;
+                                }
+                                .dropdown-menu.dropdown-menu-end {
+                                    position: absolute;
+                                    right: 0;
+                                    & > a {
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                    }
+                                }
                             }
                         }
                     }
@@ -389,30 +408,29 @@ body {
             }
         }
 
-        nav {
-            .container {
-                max-width: 540px;
-                gap: 12px;
-                padding: 0 10px;
-                .navbar-brand {
-                    & > img {
-                        width: 120px;
-                        height: 32px;
-                    }
-                }
-                .navbar-nav {
-                    justify-content: center;
-                    gap: 14px;
-                    .nav-item {
-                        .nav-link {
-                            font: 600 16px/1 Pretendard;
-                        }
+        header {
+            nav {
+                &#navbar {
+                    .container {
+                        min-width: 360px;
+                        max-width: 540px;
+                        gap: 12px;
+                        padding: 0 10px;
+                        .navbar-nav {
+                            justify-content: center;
+                            gap: 14px;
+                            .nav-item {
+                                .nav-link {
+                                    font: 600 16px/1 Pretendard;
+                                }
 
-                        .dropdown-menu.dropdown-menu-end {
-                            width: 50px;
-                            & > a {
-                                font-size: 14px;
-                                font-weight: bold;
+                                .dropdown-menu.dropdown-menu-end {
+                                    width: 50px;
+                                    & > a {
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                    }
+                                }
                             }
                         }
                     }

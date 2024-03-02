@@ -131,7 +131,7 @@
             <nav class="navbar navbar-expand-md">
                 <div class="container">
                     <a class="navbar-logo" href="{{ url('/') }}">
-                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="205.41"
+                        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="205.41"
                             height="63.624" viewBox="0 0 205.41 63.624">
                             <g id="그룹_49948" data-name="그룹 49948">
                                 <g id="그룹_49946" data-name="그룹 49946">
@@ -203,44 +203,34 @@
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            const svgGroup1Paths = document.querySelectorAll('#그룹_49946 path');
-            const svgGroup2Paths = document.querySelectorAll('#그룹_49947 path');
+            const svg1 = document.getElementById('Layer_1');
+            const svgGroupPaths = svg1.querySelectorAll('path');
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 0) {
                     navbar.classList.add('scrolled');
-                    svgGroup1Paths.forEach(path => {
+                    svgGroupPaths.forEach(path => {
                         if (path.getAttribute('fill') === '#ededed') {
                             path.setAttribute('fill', '#333b51');
                         } else if (path.getAttribute('fill') === '#bcbcbc') {
                             path.setAttribute('fill', '#7995f7');
-                        }
-                    });
-                    svgGroup2Paths.forEach(path => {
-                        if (path.getAttribute('fill') === '#f9fbff') {
+                        } else if (path.getAttribute('fill') === '#f9fbff') {
                             path.setAttribute('fill', '#572bdf');
                         } else if (path.getAttribute('fill') === '#e8e8e8') {
                             path.setAttribute('fill', '#704be3');
-                        } else if (path.getAttribute('fill') === '#bcbcbc') {
-                            path.setAttribute('fill', '#7995f7');
                         }
                     });
                 } else {
                     navbar.classList.remove('scrolled');
-                    svgGroup1Paths.forEach(path => {
+                    svgGroupPaths.forEach(path => {
                         if (path.getAttribute('fill') === '#333b51') {
                             path.setAttribute('fill', '#ededed');
                         } else if (path.getAttribute('fill') === '#bcbcbc') {
-                            path.setAttribute('fill', '#');
-                        }
-                    });
-                    svgGroup2Paths.forEach(path => {
-                        if (path.getAttribute('fill') === '#572bdf') {
+                            path.setAttribute('fill', '#7995f7');
+                        } else if (path.getAttribute('fill') === '#572bdf') {
                             path.setAttribute('fill', '#f9fbff');
                         } else if (path.getAttribute('fill') === '#704be3') {
                             path.setAttribute('fill', '#e8e8e8');
-                        } else if (path.getAttribute('fill') === '#7995f7') {
-                            path.setAttribute('fill', '#bcbcbc');
                         }
                     });
                 }

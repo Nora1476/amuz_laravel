@@ -219,6 +219,22 @@
             }
             event.target.classList.add('selected');
         }
+
+        //pathname 확인하여 class명 추가
+        function checkMessageParameter() {
+            var pathname = window.location.pathname.replace("/", "");
+            if (pathname) {
+                var links = document.querySelectorAll('.nav-link');
+                for (var i = 0; i < links.length; i++) {
+                    var href = links[i].getAttribute('href').split("/").pop();
+                    if (href === pathname) {
+                        links[i].parentNode.classList.add('link_selected');
+                        break;
+                    }
+                }
+            }
+        }
+        window.addEventListener('load', checkMessageParameter);
     </script>
 </body>
 

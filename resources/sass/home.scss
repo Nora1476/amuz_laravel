@@ -443,11 +443,13 @@
                 .sec__left {
                     width: 45%;
                     .sec__left-con {
+                        padding: 20px;
                         & > small {
                             font: 20px/1.2 Pretendard;
                             margin-bottom: 30px;
                         }
                         & > h1 {
+                            word-break: keep-all;
                             font-size: 58px;
                         }
                         .btn_wrap {
@@ -502,6 +504,7 @@
                         }
                         & > p {
                             font: 18px/1.4 Pretendard;
+                            white-space: nowrap;
                         }
                     }
                 }
