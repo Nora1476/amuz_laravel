@@ -1,6 +1,8 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">발송결과</div>
+    <div class="message_con">
+        <div class="messege_container">
+            <h2>발송 결과</h2>
+        </div>
     </div>
 </template>
 
