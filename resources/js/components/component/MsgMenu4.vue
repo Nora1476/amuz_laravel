@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">Tab1</div>
+        <div class="row justify-content-center">발송결과</div>
     </div>
 </template>
 

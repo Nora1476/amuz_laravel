@@ -15,10 +15,11 @@ import { createApp } from "vue";
 
 const app = createApp({});
 
-import ExampleComponent from "./components/ExampleComponent.vue";
-import MessaseParents from "./components/MessaseParents.vue";
-app.component("example-component", ExampleComponent);
-app.component("message-parents", MessaseParents);
+import MsgTabs from "./components/MsgTabs.vue";
+import CreditTabs from "./components/CreditTabs.vue";
+
+app.component("credit_tabs", CreditTabs);
+app.component("message-tabs", MsgTabs);
 
 /**
  * The following block of code may be used to automatically register your

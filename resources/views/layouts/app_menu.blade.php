@@ -19,6 +19,7 @@
 </head>
 
 <style>
+    /* home 외 메뉴에 적용 */
     body header nav#navbar {
         background-color: #fff;
     }

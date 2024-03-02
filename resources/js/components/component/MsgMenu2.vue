@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">Tab2</div>
+        <div class="row justify-content-center">발신번호 관리</div>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">Tab3</div>
+        <div class="row justify-content-center">주소록 관리</div>
     </div>
 </template>
 
