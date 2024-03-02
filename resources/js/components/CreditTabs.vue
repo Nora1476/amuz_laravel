@@ -20,6 +20,7 @@ export default {
         };
     },
     computed: {
+        //선택된 탭에 해당하는 컴포넌트를 반환하는 속성
         currentTabComponent() {
             const tab = this.tabs.find((tab) => tab.name === this.currentTab);
             return tab ? tab.component : null;

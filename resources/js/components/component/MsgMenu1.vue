@@ -1,13 +1,18 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">메세지전송</div>
+    <div class="message_con">
+        <div class="messege_container">
+            <!-- SendTop vue 삽입 -->
+            <SendTap></SendTap>
+        </div>
     </div>
 </template>
 
 <script>
+import SendTap from "../SendTap.vue";
+
 export default {
-    mounted() {
-        console.log("Component mounted.");
+    components: {
+        SendTap,
     },
 };
 </script>

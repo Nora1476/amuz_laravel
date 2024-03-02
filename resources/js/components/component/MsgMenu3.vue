@@ -1,6 +1,8 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">주소록 관리</div>
+    <div class="message_con">
+        <div class="messege_container">
+            <h2>주소록 관리</h2>
+        </div>
     </div>
 </template>
 
