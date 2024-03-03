@@ -56,6 +56,7 @@ body {
                 color: #555555;
                 border-radius: 13px;
                 padding: 16px 32px;
+                cursor: pointer;
 
                 &.active {
                     color: #4f44f0;
@@ -334,6 +335,13 @@ body {
                         flex-wrap: nowrap !important;
                         gap: 40px;
                         padding: 0 20px;
+                        .navbar-brand {
+                            margin: 0;
+                            & > svg {
+                                width: 130px;
+                                height: 30px;
+                            }
+                        }
                         .navbar-nav {
                             flex-direction: row;
                             justify-content: flex-end;
@@ -374,6 +382,10 @@ body {
                 .container {
                     flex-wrap: nowrap;
                     padding: 40px 20px;
+                    .navbar-logo {
+                        width: 130px;
+                        height: 32px;
+                    }
                     .navbar-nav {
                         flex-direction: row;
                         .nav-item {
@@ -449,21 +461,21 @@ body {
         footer {
             .navbar {
                 svg {
-                    width: 130px;
-                    height: 32px;
+                    width: 130px !important;
+                    height: 32px !important;
                 }
 
                 .container {
                     flex-wrap: nowrap;
-                    gap: 20px !important;
-                    padding: 30px 20px;
+                    gap: 0px !important;
+                    padding: 30px 10px !important;
                     .navbar-nav {
                         justify-content: flex-end;
                         flex-direction: row;
-                        gap: 40px !important;
+                        gap: 20px !important;
                         .nav-item {
                             .nav-link {
-                                font: 14px/1 Pretendard;
+                                font: 12px/1 Pretendard;
                             }
                         }
                     }

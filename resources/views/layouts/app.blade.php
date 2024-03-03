@@ -225,8 +225,8 @@
                     svgGroupPaths.forEach(path => {
                         if (path.getAttribute('fill') === '#333b51') {
                             path.setAttribute('fill', '#ededed');
-                        } else if (path.getAttribute('fill') === '#bcbcbc') {
-                            path.setAttribute('fill', '#7995f7');
+                        } else if (path.getAttribute('fill') === '#7995f7') {
+                            path.setAttribute('fill', '#bcbcbc');
                         } else if (path.getAttribute('fill') === '#572bdf') {
                             path.setAttribute('fill', '#f9fbff');
                         } else if (path.getAttribute('fill') === '#704be3') {

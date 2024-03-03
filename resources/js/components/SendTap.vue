@@ -32,6 +32,7 @@ export default {
 </script>
 
 <template>
+    <!-- 메세지 > 메세지 전송 > 탭(3) -->
     <div class="massage_tabs">
         <button
             v-for="(tab, index) in tabs"

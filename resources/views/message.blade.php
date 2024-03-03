@@ -22,7 +22,7 @@
 
     <div class="message">
 
-
+        {{-- vue 컴포넌트 삽입 --}}
         <message-tabs></message-tabs>
 
 

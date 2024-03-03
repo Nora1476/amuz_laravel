@@ -27,6 +27,7 @@ export default {
     },
     computed: {
         currentTabComponent() {
+            // 클릭한 탭의 이름과 tabs배열 내 이름이 일치하는것
             const tab = this.tabs.find((tab) => tab.name === this.currentTab);
             return tab ? tab.component : null;
         },
@@ -35,6 +36,7 @@ export default {
 </script>
 
 <template>
+    <!-- 메세지 페이지 subnav -->
     <div class="sub_nav">
         <ul>
             <li
@@ -50,6 +52,8 @@ export default {
             </li>
         </ul>
     </div>
+
+    <!-- tab -->
     <div class="tab-content">
         <component :is="currentTabComponent"></component>
     </div>

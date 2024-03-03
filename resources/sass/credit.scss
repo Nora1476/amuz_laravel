@@ -214,7 +214,7 @@
             }
 
             .credit_con_cards {
-                grid-template-columns: repeat(3, auto);
+                grid-template-columns: repeat(2, auto);
                 gap: 20px;
                 .credit_card {
                     padding: 34px 22px;
@@ -341,7 +341,7 @@
     }
 }
 
-@include tablet {
+@include mobile {
     .credit {
         min-width: 360px;
         .credit_con {

@@ -336,6 +336,15 @@ export default {
                     removeButton.className = "remove-button";
                     removeButton.addEventListener("click", function () {
                         previewContainer.remove();
+
+                        // 해당 파일의 업로드를 취소하기 위해 파일 입력 필드에서 제거
+                        var index = Array.prototype.indexOf.call(
+                            imagePreview.children,
+                            previewContainer
+                        );
+                        input.files = Array.from(input.files).filter(
+                            (_, i) => i !== index
+                        );
                     });
 
                     previewContainer.appendChild(image);

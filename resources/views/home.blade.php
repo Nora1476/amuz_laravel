@@ -8,6 +8,7 @@
                     <small>인터넷 문자 메시지 전송의 모든 것</small>
                     <h1>가장 빠르고 안정적인 <br> 문자 서비스 SENDGO</h1>
                     <div class="btn_wrap">
+                        {{-- guest일 경우에만 노출 --}}
                         @guest
                             @if (Route::has('login'))
                                 <button class="sec__btn"><a href="{{ route('login') }}">{{ __('로그인') }}</a></button>

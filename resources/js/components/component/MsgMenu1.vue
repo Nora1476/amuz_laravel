@@ -1,7 +1,8 @@
 <template>
+    <!--메세지전송 -->
     <div class="message_con">
         <div class="messege_container">
-            <!-- SendTop vue 삽입 -->
+            <!-- vue 컴포넌트 삽입 -->
             <SendTap></SendTap>
         </div>
     </div>
