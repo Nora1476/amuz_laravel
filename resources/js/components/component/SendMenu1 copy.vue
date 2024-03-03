@@ -80,7 +80,7 @@
                         name="msg_sendnum"
                         v-model="formData.msg_sendnum"
                     >
-                        <option value="" selected>전송할 발신번호 선택</option>
+                        <option selected disabled>전송할 발신번호 선택</option>
                         <option value="1">0510000000</option>
                         <option value="2">01012345678</option>
                     </select>
@@ -204,6 +204,7 @@
                     v-model="formData.msg_sendoption"
                     id="success-outlined"
                     autocomplete="off"
+                    checked
                 />
                 <label class="btn btn-outline-now" for="success-outlined"
                     >즉시 발송</label
@@ -234,13 +235,12 @@ import axios from "axios";
 export default {
     data() {
         return {
-            msg_sendoption: "즉시발송",
             formData: {
                 msg_recivenum: "",
                 msg_sendnum: "",
                 msg_title: "",
                 msg_text: "",
-                msg_sendoption: "즉시발송",
+                msg_sendoption: "",
                 images: [], // 이미지 파일들을 저장할 배열 추가
             },
         };
@@ -262,28 +262,30 @@ export default {
             var title = document.querySelector(".msg_title");
             var text = document.querySelector(".msg_text");
 
-            if (!this.formData.msg_recivenum.trim()) {
+            if (recivenum.value.trim() === "") {
                 alert("수신번호를 입력해주세요.");
                 recivenum.focus();
-                return;
+                return false;
             }
-            if (!this.formData.msg_sendnum) {
-                alert("발신번호를 선택해주세요.");
-                sendnum.focus();
-                return;
+            if (sendnum.value === "") {
+                alert("발신번호를 선택하여 주세요!");
+                sendnum.focus(); // Focus on the select field
+                return false;
             }
-            if (!this.formData.msg_title.trim()) {
-                alert("제목을 입력해주세요.");
-                title.focus();
-                return;
+            if (title.value === "") {
+                alert("제목을 입력하여 주세요");
+                setTimeout(function () {
+                    title.focus();
+                }, 50);
+                return false;
             }
-            if (!this.formData.msg_text.trim()) {
+            if (text.value.trim() === "") {
                 alert("내용을 입력해주세요.");
                 text.focus();
-                return;
+                return false;
             }
 
-            console.log("Form Data:", this.formData);
+            // console.log("Form Data:", this.formData);
             const formData = new FormData();
             formData.append("msg_recivenum", this.formData.msg_recivenum);
             formData.append("msg_sendnum", this.formData.msg_sendnum);
@@ -316,9 +318,9 @@ export default {
                     window.location.reload();
                 })
                 .catch((error) => {
-                    console.error(error);
-                    alert("데이터가 전송에 실패하였습니다.");
-                    // 데이터 전송 실패 시 처리
+                    console.localStorage(error);
+                    alert("전송에 실패하였습니다.");
+                    window.location.reload();
                 });
         },
         validateAndAddFile(input) {

@@ -29,6 +29,7 @@ class MessageController extends Controller
         // 이미지 파일 가져오기
         $images = $request->file('images');
 
+
         // 데이터 유효성 검사
         $validatedData = $request->validate([
             'msg_recivenum' => 'required|string',
