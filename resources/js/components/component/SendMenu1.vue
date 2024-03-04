@@ -188,7 +188,13 @@
             </div>
 
             <div class="main_right">
-                <div class="main_right-text">{{ msgText }}</div>
+                <div class="main_right-text">
+                    <span class="material-symbols-outlined">
+                        arrow_back_ios </span
+                    ><br /><br />
+
+                    {{ msgText }}
+                </div>
             </div>
         </div>
 
