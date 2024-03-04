@@ -2,14 +2,14 @@
 
 
 <style>
-    .login {
+    .register {
         padding: 100px 0;
     }
 </style>
 
 
 @section('content')
-    <div class="container">
+    <div class="container register">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">

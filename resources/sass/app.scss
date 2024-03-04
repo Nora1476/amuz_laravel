@@ -212,9 +212,14 @@ body {
             nav {
                 &#navbar {
                     .container {
-                        gap: 200px;
+                        gap: 100px;
+                        .navbar-collapse {
+                            flex: 1;
+                        }
                         .navbar-nav {
-                            gap: 80px;
+                            width: 100%;
+                            justify-content: space-evenly;
+                            gap: 0px;
                         }
                     }
                 }
@@ -273,7 +278,6 @@ body {
                         max-width: 1024px;
                         gap: 200px;
                         .navbar-nav {
-                            gap: 50px;
                             .nav-item {
                                 padding: 0 40px;
                                 .nav-link {
@@ -385,6 +389,9 @@ body {
                                         padding: 10px 0;
                                         cursor: pointer;
                                         border-bottom: 1px solid #d1d1d1;
+                                        &.dropdown {
+                                            flex-direction: column;
+                                        }
                                         &.top {
                                             color: #000;
                                         }
@@ -474,8 +481,9 @@ body {
                 .sub_nav-menu {
                     font: 14px Pretendard;
                     font-weight: 600;
-                    padding: 10px 20px;
+                    padding: 10px;
                     text-align: center;
+                    word-break: keep-all;
                     & > a {
                         word-break: keep-all;
                     }
@@ -529,7 +537,7 @@ body {
                     gap: 0px !important;
                     padding: 30px 10px !important;
                     .navbar-nav {
-                        justify-content: flex-end;
+                        justify-content: center;
                         flex-direction: row;
                         gap: 20px !important;
                         .nav-item {
