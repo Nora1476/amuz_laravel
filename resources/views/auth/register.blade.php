@@ -34,7 +34,7 @@
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong>8자 이상 입력하여주세요.</strong>
                             </span>
                         @enderror
                     </div>
@@ -48,7 +48,7 @@
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong>비밀번호를 확인하여 주세요.</strong>
                             </span>
                         @enderror
                     </div>
@@ -65,9 +65,8 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="agree" id="agree">
 
-                            <label class="form-check-label" for="agree">
-                                {{ __('모든 약관에 동의합니다.') }}
-                            </label>
+                            <label class="form-check-label" for="agree"></label>
+                            <label for="agree">{{ __('모든 약관에 동의합니다.') }}</label>
                         </div>
                     </div>
 

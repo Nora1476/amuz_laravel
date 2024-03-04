@@ -10,13 +10,13 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input_data">
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                            placeholder="아이디를 입력해주세요" onfocus="this.placeholder=''" onblur="this.placeholder='아이디를 입력해주세요'">
+                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autofocus placeholder="아이디를 입력해주세요"
+                            onfocus="this.placeholder=''" onblur="this.placeholder='아이디를 입력해주세요'">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong> 아이디 또는 비밀번호를 확인하여 주세요. </strong>
                             </span>
                         @enderror
                     </div>
@@ -29,7 +29,7 @@
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong>비밀번호를 확인하여 주세요.</strong>
                             </span>
                         @enderror
                     </div>
@@ -39,9 +39,8 @@
                             <input class="form-check-input" type="checkbox" name="remember" id="remember"
                                 {{ old('remember') ? 'checked' : '' }}>
 
-                            <label class="form-check-label" for="remember">
-                                {{ __('아이디 저장') }}
-                            </label>
+                            <label class="form-check-label" for="remember"></label>
+                            <label class="form-check-label" for="remember">{{ __('아이디 저장') }}</label>
                         </div>
                         <div class="find_wrap">
                             <span class="find_id">아이디 찾기</span>
