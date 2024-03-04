@@ -240,13 +240,13 @@ import axios from "axios";
 export default {
     data() {
         return {
-            msg_sendoption: "즉시발송",
+            msg_sendoption: "즉시발송", //미리체크
             formData: {
                 msg_recivenum: "",
                 msg_sendnum: "",
                 msg_title: "",
                 msg_text: "",
-                msg_sendoption: "즉시발송",
+                msg_sendoption: "즉시발송", //기본데이터값으로
                 images: [], // 이미지 파일들을 저장할 배열 추가
             },
         };
@@ -327,9 +327,11 @@ export default {
                     // 데이터 전송 실패 시 처리
                 });
         },
+
         validateAndAddFile(input) {
             var files = input.files;
             var imagePreview = document.getElementById("image-preview");
+            var self = this; // "FileReader.onload" 함수 내에서 'this'를 사용하기 위해 'this'에 대한 참조를 저장
 
             // 유효성 검사: 이미지 파일 수가 3개 이하인지 확인
             if (files.length > 3) {
@@ -354,10 +356,11 @@ export default {
             }
 
             // 파일이 유효한 경우 미리보기 생성
-            imagePreview.innerHTML = ""; // Clear previous previews
+            imagePreview.innerHTML = "";
 
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
+
                 var reader = new FileReader();
 
                 reader.onload = function (event) {
@@ -372,6 +375,22 @@ export default {
                     removeButton.innerHTML = "&times;";
                     removeButton.className = "remove-button";
                     removeButton.addEventListener("click", function () {
+                        // 해당 파일 입력 요소를 찾고 파일을 제거
+
+                        var index = Array.from(imagePreview.children).indexOf(
+                            previewContainer
+                        );
+                        if (index !== -1) {
+                            var filesArray = Array.from(input.files); // FileList를 배열로 변환
+                            filesArray.splice(index, 1);
+
+                            // 수정된 배열을 기반으로 새로운 FileList 객체 생성
+                            var newFileList = new DataTransfer();
+                            filesArray.forEach(function (file) {
+                                newFileList.items.add(file);
+                            });
+                            input.files = newFileList.files; //파일 목록을 업데이트
+                        }
                         previewContainer.remove();
                     });
 
