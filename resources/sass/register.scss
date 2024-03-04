@@ -23,6 +23,9 @@
                 width: 219px;
                 height: 68px;
                 margin-bottom: 70px;
+                & > img {
+                    width: 100%;
+                }
             }
             & > form {
                 display: flex;
@@ -84,6 +87,200 @@
                         padding: 20px 0;
                         background: #4f44f0 0% 0% no-repeat padding-box;
                         border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    .register {
+        // min-height: 70vh;
+        padding: 170px 0 150px;
+        .card_wrap {
+            .card {
+                & > a {
+                    width: 210px;
+                    height: 68px;
+                    margin-bottom: 68px;
+                }
+                & > form {
+                    gap: 60px;
+                    .input_data {
+                        & > label {
+                            font: 21px/1.4 Pretendard;
+                            font-weight: bold;
+                            margin-bottom: 12px;
+                        }
+                        .form-control {
+                            min-width: 550px;
+                            height: 60px;
+                            padding: 20px;
+                            font: 18px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 18px/1.4 Pretendard;
+                        .form-check {
+                            gap: 8px;
+                            padding: 50px 0;
+                            & > label {
+                                font: 20px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 22px/26px Pretendard;
+                            padding: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include laptop {
+    .register {
+        // min-height: 70vh;
+        padding: 150px 0 140px;
+        .card_wrap {
+            .card {
+                & > a {
+                    width: 200px;
+                    height: 66px;
+                    margin-bottom: 66px;
+                }
+                & > form {
+                    gap: 40px;
+                    .input_data {
+                        & > label {
+                            font: 20px/1.4 Pretendard;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .form-control {
+                            min-width: 540px;
+                            height: 60px;
+                            padding: 20px;
+                            font: 18px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 18px/1.4 Pretendard;
+                        .form-check {
+                            gap: 8px;
+                            padding: 40px 0;
+                            & > label {
+                                font: 18px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 20px/26px Pretendard;
+                            padding: 20px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .register {
+        // min-height: 70vh;
+        padding: 120px 0;
+        .card_wrap {
+            .card {
+                & > a {
+                    width: 190px;
+                    height: 60px;
+                    margin-bottom: 60px;
+                }
+                & > form {
+                    gap: 32px;
+                    .input_data {
+                        & > label {
+                            font: 18px/1.4 Pretendard;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .form-control {
+                            min-width: 480px;
+                            height: 60px;
+                            padding: 20px;
+                            font: 17px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 16px/1.4 Pretendard;
+                        .form-check {
+                            gap: 8px;
+                            padding: 20px 0;
+                            & > label {
+                                font: 17px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 18px/26px Pretendard;
+                            padding: 18px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile {
+    .register {
+        // min-height: 70vh;
+        padding: 120px 0;
+        .card_wrap {
+            .card {
+                & > a {
+                    width: 160px;
+                    height: 50px;
+                    margin-bottom: 40px;
+                }
+                & > form {
+                    gap: 22px;
+                    .input_data {
+                        & > label {
+                            font: 16px/1.4 Pretendard;
+                            font-weight: bold;
+                            margin-bottom: 6px;
+                        }
+                        .form-control {
+                            min-width: 320px;
+                            height: 50px;
+                            padding: 18px;
+                            padding-left: 32px;
+                            font: 14px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 14px/1.4 Pretendard;
+                        .form-check {
+                            gap: 6px;
+                            padding: 18px 0;
+                            & > label {
+                                font: 15px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 16px/26px Pretendard;
+                            padding: 14px 0;
+                        }
                     }
                 }
             }
