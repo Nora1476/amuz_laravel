@@ -53,6 +53,11 @@
                         padding-left: 40px;
                         font: 18px/21px Pretendard;
                         color: #7b7b7b;
+                        border: 1px solid #cecece;
+                        &:focus {
+                            outline: 0;
+                            box-shadow: none;
+                        }
                     }
                     &:nth-child(2) {
                         &::before {
@@ -142,10 +147,6 @@
                             padding: 20px;
                             padding-left: 40px;
                             font: 18px/1.4 Pretendard;
-                            &:focus {
-                                outline: 0;
-                                box-shadow: none;
-                            }
                         }
                     }
                     .chk_data {
