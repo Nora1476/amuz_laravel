@@ -1,0 +1,92 @@
+.register {
+    width: 100%;
+    height: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f4f8;
+    padding: 174px 0 156px;
+    .card_wrap {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background: transparent;
+            & > a {
+                width: 219px;
+                height: 68px;
+                margin-bottom: 70px;
+            }
+            & > form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 64px;
+                .input_data {
+                    & > label {
+                        font: 22px/26px Pretendard;
+                        font-weight: bold;
+                        color: #000000;
+                        margin-bottom: 14px;
+                    }
+                    .form-control {
+                        width: 100%;
+                        min-width: 560px;
+                        height: 61px;
+                        padding: 20px;
+                        font: 18px/21px Pretendard;
+                        color: #7b7b7b;
+                        border: 1px solid #cecece;
+                        &:focus {
+                            outline: 0;
+                            box-shadow: none;
+                        }
+                    }
+                }
+                .chk_data {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    font: 18px/21px Pretendard;
+                    color: #1c1c1c;
+                    border-top: 1px solid #dedede;
+                    border-bottom: 1px solid #dedede;
+                    .form-check {
+                        display: flex;
+                        align-items: center;
+                        padding: 0;
+                        gap: 8px;
+                        padding: 52px 0;
+                        .form-check-input {
+                            margin: 0;
+                        }
+                        & > label {
+                            font: 20px/24px Pretendard;
+                            font-weight: 600;
+                            color: #1c1c1c;
+                        }
+                    }
+                }
+                .btn_wrap {
+                    width: 100%;
+                    & > button {
+                        width: 100%;
+                        font: 22px/26px Pretendard;
+                        color: #ffffff;
+                        padding: 20px 0;
+                        background: #4f44f0 0% 0% no-repeat padding-box;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

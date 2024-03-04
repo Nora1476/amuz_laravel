@@ -1,0 +1,333 @@
+.login {
+    width: 100%;
+    height: 100%;
+    min-height: 71vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f4f8;
+    .card_wrap {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background: transparent;
+            & > a {
+                width: 219px;
+                height: 68px;
+                margin-bottom: 70px;
+                & > img {
+                    width: 100%;
+                }
+            }
+            & > form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 24px;
+                .input_data {
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 8px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 32px; /* 이미지의 크기 지정 */
+                        height: 32px;
+                        background-image: url("/public/img/icon/icon17.png"); /* 이미지 경로 설정 */
+                        background-size: cover;
+                    }
+                    & > input {
+                        width: 100%;
+                        min-width: 560px;
+                        height: 61px;
+                        padding: 20px;
+                        padding-left: 40px;
+                        font: 18px/21px Pretendard;
+                        color: #7b7b7b;
+                    }
+                    &:nth-child(2) {
+                        &::before {
+                            background-image: url("/public/img/icon/icon18.png"); /* 이미지 경로 설정 */
+                        }
+                    }
+                }
+                .chk_data {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    font: 18px/21px Pretendard;
+                    color: #1c1c1c;
+                    .form-check {
+                        display: flex;
+                        align-items: center;
+                        padding: 0;
+                        gap: 8px;
+                        .form-check-input {
+                            margin: 0;
+                        }
+                    }
+                    .find_wrap {
+                        & > span {
+                            cursor: pointer;
+                        }
+                        display: flex;
+                        gap: 14px;
+                    }
+                }
+                .btn_wrap {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    & > button {
+                        font: 20px/24px Pretendard;
+                        color: #ffffff;
+                        background: #5146f0 0% 0% no-repeat padding-box;
+                        border-radius: 8px;
+                        padding: 20px 0;
+                    }
+                    .btn_regi {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 8px;
+                        margin-top: 42px;
+                        & > span {
+                            font: 18px/21px Pretendard;
+                            font-weight: 600;
+                            color: #1c1c1c;
+                        }
+                        & > a {
+                            font: 18px/21px Pretendard;
+                            color: #5146f0;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop {
+    .login {
+        // min-height: 71vh;
+        .card_wrap {
+            // height: 100%;
+            .card {
+                & > a {
+                    width: 210px;
+                    height: 68px;
+                    margin-bottom: 68px;
+                }
+                & > form {
+                    gap: 23px;
+                    .input_data {
+                        &::before {
+                            width: 32px;
+                            height: 32px;
+                        }
+                        & > input {
+                            min-width: 550px;
+                            height: 60px;
+                            padding: 20px;
+                            padding-left: 40px;
+                            font: 18px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 18px/1.4 Pretendard;
+                        .find_wrap {
+                            gap: 13px;
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 20px/1.4 Pretendard;
+                            padding: 20px 0;
+                        }
+                        .btn_regi {
+                            margin-top: 40px;
+                            & > span {
+                                font: 18px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                            & > a {
+                                font: 18px/1.4 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include laptop {
+    .login {
+        // min-height: 71vh;
+        .card_wrap {
+            // height: 100%;
+            .card {
+                & > a {
+                    width: 200px;
+                    height: 66px;
+                    margin-bottom: 66px;
+                }
+                & > form {
+                    gap: 22px;
+                    .input_data {
+                        &::before {
+                            width: 31px;
+                            height: 31px;
+                        }
+                        & > input {
+                            min-width: 540px;
+                            height: 60px;
+                            padding: 20px;
+                            padding-left: 38px;
+                            font: 18px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 18px/1.4 Pretendard;
+                        .find_wrap {
+                            gap: 12px;
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 20px/1.4 Pretendard;
+                            padding: 20px 0;
+                        }
+                        .btn_regi {
+                            margin-top: 38px;
+                            & > span {
+                                font: 18px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                            & > a {
+                                font: 18px/1.4 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include tablet {
+    .login {
+        // min-height: 71vh;
+        .card_wrap {
+            // height: 100%;
+            .card {
+                & > a {
+                    width: 190px;
+                    height: 60px;
+                    margin-bottom: 60px;
+                }
+                & > form {
+                    gap: 20px;
+                    .input_data {
+                        &::before {
+                            width: 30px;
+                            height: 30px;
+                        }
+                        & > input {
+                            min-width: 480px;
+                            height: 60px;
+                            padding: 20px;
+                            padding-left: 36px;
+                            font: 17px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 17px/1.4 Pretendard;
+                        .find_wrap {
+                            gap: 10px;
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 18px/1.4 Pretendard;
+                            padding: 18px 0;
+                        }
+                        .btn_regi {
+                            margin-top: 36px;
+                            & > span {
+                                font: 16px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                            & > a {
+                                font: 16px/1.4 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include mobile {
+    .login {
+        min-height: none;
+        min-width: 360px;
+        .card_wrap {
+            // height: 100%;
+            .card {
+                & > a {
+                    width: 160px;
+                    height: 50px;
+                    margin-bottom: 40px;
+                }
+                & > form {
+                    // gap: 20px;
+                    .input_data {
+                        &::before {
+                            width: 24px;
+                            height: 24px;
+                        }
+                        & > input {
+                            min-width: 320px;
+                            height: 50px;
+                            padding: 18px;
+                            padding-left: 32px;
+                            font: 14px/1.4 Pretendard;
+                        }
+                    }
+                    .chk_data {
+                        font: 14px/1.4 Pretendard;
+                        .find_wrap {
+                            gap: 8px;
+                        }
+                    }
+                    .btn_wrap {
+                        & > button {
+                            font: 16px/1.4 Pretendard;
+                            padding: 14px 0;
+                        }
+                        .btn_regi {
+                            margin-top: 30px;
+                            & > span {
+                                font: 14px/1.4 Pretendard;
+                                font-weight: 600;
+                            }
+                            & > a {
+                                font: 14px/1.4 Pretendard;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
