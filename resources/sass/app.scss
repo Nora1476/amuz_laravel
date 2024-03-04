@@ -32,7 +32,9 @@ input:focus::placeholder {
 input:focus::-ms-input-placeholder {
     color: transparent;
 }
-
+body.fixed {
+    overflow: hidden;
+}
 body {
     min-width: 1400px;
     background-color: #ffffff;
@@ -104,11 +106,15 @@ body {
                     }
                     .navbar-collapse {
                         height: 100%;
+                        .mo_gnb {
+                            display: none;
+                        }
                     }
                     .navbar-nav {
                         height: 100%;
                         align-items: center;
                         gap: 0;
+
                         .nav-item {
                             height: 100%;
                             display: flex;
@@ -335,6 +341,7 @@ body {
                         flex-wrap: nowrap !important;
                         gap: 40px;
                         padding: 0 20px;
+
                         .navbar-brand {
                             margin: 0;
                             & > svg {
@@ -342,26 +349,78 @@ body {
                                 height: 30px;
                             }
                         }
-                        .navbar-nav {
-                            flex-direction: row;
+                        .navbar-collapse {
+                            display: flex;
+                            align-items: center;
                             justify-content: flex-end;
-                            gap: 50px;
-                            .nav-item {
-                                padding: 0 20px;
-                                .nav-link {
-                                    font: 600 18px/1 Pretendard;
-                                }
-                                &.dropdown {
-                                    position: relative;
-                                }
-                                .dropdown-menu.dropdown-menu-end {
-                                    position: absolute;
-                                    right: 0;
-                                    & > a {
-                                        font-size: 14px;
-                                        font-weight: bold;
+                            color: #fff;
+                            cursor: pointer;
+                            .mo_gnb {
+                                width: 100%;
+                                display: flex;
+                                justify-content: flex-end;
+                                color: #fff;
+                                .navbar-nav {
+                                    width: 100vw;
+                                    max-width: 320px;
+                                    height: 100vh;
+                                    position: fixed;
+                                    top: 0;
+                                    right: -320px;
+                                    padding: 40px;
+                                    background: #fff;
+                                    overflow: hidden;
+                                    transition: all 1s;
+                                    justify-content: flex-start;
+                                    gap: 20px;
+                                    &.on {
+                                        right: 0;
+                                        box-shadow: 8px 8px 8px rgb(0 0 0 / 15%),
+                                            0 0 0 9999px rgb(0 0 0 / 70%);
+                                    }
+                                    .nav-item {
+                                        width: 100%;
+                                        max-height: 50px;
+                                        font-size: 18px;
+                                        padding: 10px 0;
+                                        cursor: pointer;
+                                        border-bottom: 1px solid #d1d1d1;
+                                        &.top {
+                                            color: #000;
+                                        }
+                                        &:first-child {
+                                            display: flex;
+                                            justify-content: flex-end;
+                                            border-bottom: 0;
+                                        }
+                                        & > a {
+                                            color: #000000;
+                                        }
                                     }
                                 }
+                            }
+                            .navbar-nav.pc_gnb {
+                                display: none;
+                                // flex-direction: row;
+                                // justify-content: flex-end;
+                                // gap: 50px;
+                                // .nav-item {
+                                //     padding: 0 20px;
+                                //     .nav-link {
+                                //         font: 600 18px/1 Pretendard;
+                                //     }
+                                //     &.dropdown {
+                                //         position: relative;
+                                //     }
+                                //     .dropdown-menu.dropdown-menu-end {
+                                //         position: absolute;
+                                //         right: 0;
+                                //         & > a {
+                                //             font-size: 14px;
+                                //             font-weight: bold;
+                                //         }
+                                //     }
+                                // }
                             }
                         }
                     }
