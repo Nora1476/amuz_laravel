@@ -14,7 +14,7 @@
                         <label for="name" class="label_name">{{ __('이름') }}</label>
 
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
+                            name="name" value="{{ old('name') }}" required autocomplete="name"
                             placeholder="이름을 입력해 주세요" onfocus="this.placeholder=''" onblur="this.placeholder='이름을 입력해 주세요'">
 
                         @error('name')
@@ -25,10 +25,10 @@
                     </div>
 
                     <div class="input_data">
-                        <label for="email" class="label_id">{{ __('아이디') }}</label>
+                        <label for="user_id" class="label_id">{{ __('아이디') }}</label>
 
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email"
+                        <input id="user_id" type="text" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('user_id') }}" required autocomplete="off"
                             placeholder="8자 이상, 영문 혹은 영문과 숫자조합" onfocus="this.placeholder=''"
                             onblur="this.placeholder='8자 이상, 영문 혹은 영문과 숫자조합'">
 
