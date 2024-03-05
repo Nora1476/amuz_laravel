@@ -257,9 +257,85 @@ export default {
             this.validateAndAddFile(event.target);
 
             //이미지 파일경로 리스트로 변환
-            const files = event.target.files;
+            let files = event.target.files;
             for (let i = 0; i < files.length; i++) {
                 this.formData.images.push(files[i]);
+            }
+        },
+        validateAndAddFile(input) {
+            var files = input.files;
+            var imagePreview = document.getElementById("image-preview");
+            var self = this; // "FileReader.onload" 함수 내에서 'this'를 사용하기 위해 'this'에 대한 참조를 저장
+
+            // 유효성 검사: 이미지 파일 수가 3개 이하인지 확인
+            if (files.length > 3) {
+                alert("최대 3개의 이미지 파일만 업로드할 수 있습니다.");
+                input.value = ""; // 파일 입력 필드 비우기
+                return;
+            }
+
+            // 유효성 검사: 파일 크기 확인
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var fileSizeInMB = file.size / (1024 * 1024); // 파일 크기를 MB로 변환
+
+                if (fileSizeInMB > 5) {
+                    // 5MB 이상의 파일 크기 허용하지 않음
+                    alert(
+                        "각 이미지 파일의 크기는 최대 5MB를 넘을 수 없습니다."
+                    );
+                    input.value = ""; // 파일 입력 필드 비우기
+                    return;
+                }
+            }
+
+            // 파일이 유효한 경우 미리보기 생성
+            imagePreview.innerHTML = "";
+
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+
+                var reader = new FileReader();
+
+                reader.onload = function (event) {
+                    var imageUrl = event.target.result;
+                    var previewContainer = document.createElement("div");
+                    previewContainer.className = "preview-container";
+
+                    var image = document.createElement("img");
+                    image.src = imageUrl;
+
+                    var removeButton = document.createElement("span");
+                    removeButton.innerHTML = "&times;";
+                    removeButton.className = "remove-button";
+                    removeButton.addEventListener("click", function () {
+                        // 해당 파일 입력 요소를 찾고 파일을 제거
+
+                        var index = Array.from(imagePreview.children).indexOf(
+                            previewContainer
+                        );
+                        if (index !== -1) {
+                            var filesArray = Array.from(input.files); // FileList를 배열로 변환
+                            filesArray.splice(index, 1);
+
+                            // 수정된 배열을 기반으로 새로운 FileList 객체 생성
+                            var newFileList = new DataTransfer();
+                            filesArray.forEach(function (file) {
+                                newFileList.items.add(file);
+                            });
+                            input.files = newFileList.files; //파일 목록을 업데이트
+                            // formData.images에서도 해당 이미지를 제거
+                            self.formData.images.splice(index, 1);
+                        }
+                        previewContainer.remove();
+                    });
+
+                    previewContainer.appendChild(image);
+                    previewContainer.appendChild(removeButton);
+                    imagePreview.appendChild(previewContainer);
+                };
+
+                reader.readAsDataURL(file);
             }
         },
         submitForm() {
@@ -326,81 +402,6 @@ export default {
                     alert("데이터가 전송에 실패하였습니다.");
                     // 데이터 전송 실패 시 처리
                 });
-        },
-
-        validateAndAddFile(input) {
-            var files = input.files;
-            var imagePreview = document.getElementById("image-preview");
-            var self = this; // "FileReader.onload" 함수 내에서 'this'를 사용하기 위해 'this'에 대한 참조를 저장
-
-            // 유효성 검사: 이미지 파일 수가 3개 이하인지 확인
-            if (files.length > 3) {
-                alert("최대 3개의 이미지 파일만 업로드할 수 있습니다.");
-                input.value = ""; // 파일 입력 필드 비우기
-                return;
-            }
-
-            // 유효성 검사: 파일 크기 확인
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-                var fileSizeInMB = file.size / (1024 * 1024); // 파일 크기를 MB로 변환
-
-                if (fileSizeInMB > 5) {
-                    // 5MB 이상의 파일 크기 허용하지 않음
-                    alert(
-                        "각 이미지 파일의 크기는 최대 5MB를 넘을 수 없습니다."
-                    );
-                    input.value = ""; // 파일 입력 필드 비우기
-                    return;
-                }
-            }
-
-            // 파일이 유효한 경우 미리보기 생성
-            imagePreview.innerHTML = "";
-
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-
-                var reader = new FileReader();
-
-                reader.onload = function (event) {
-                    var imageUrl = event.target.result;
-                    var previewContainer = document.createElement("div");
-                    previewContainer.className = "preview-container";
-
-                    var image = document.createElement("img");
-                    image.src = imageUrl;
-
-                    var removeButton = document.createElement("span");
-                    removeButton.innerHTML = "&times;";
-                    removeButton.className = "remove-button";
-                    removeButton.addEventListener("click", function () {
-                        // 해당 파일 입력 요소를 찾고 파일을 제거
-
-                        var index = Array.from(imagePreview.children).indexOf(
-                            previewContainer
-                        );
-                        if (index !== -1) {
-                            var filesArray = Array.from(input.files); // FileList를 배열로 변환
-                            filesArray.splice(index, 1);
-
-                            // 수정된 배열을 기반으로 새로운 FileList 객체 생성
-                            var newFileList = new DataTransfer();
-                            filesArray.forEach(function (file) {
-                                newFileList.items.add(file);
-                            });
-                            input.files = newFileList.files; //파일 목록을 업데이트
-                        }
-                        previewContainer.remove();
-                    });
-
-                    previewContainer.appendChild(image);
-                    previewContainer.appendChild(removeButton);
-                    imagePreview.appendChild(previewContainer);
-                };
-
-                reader.readAsDataURL(file);
-            }
         },
     },
     computed: {
