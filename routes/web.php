@@ -33,7 +33,7 @@ Route::get('/credit', function () {
 
 
 
-
+// config/app.php해당 구성 파일에서 공급자 역할을 하는 클래스 확인 가능
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -50,8 +50,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'min:8', 'max:255', 'unique:users'],
+            'user_id' => ['required', 'string', 'min:8', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ], [
+            'user_id.min' => '아이디는 8자 이상 영문조합이어야 합니다.',
+            'email.min' => '이메일 형식에 맞게 입력해 주세요.',
+            'password.min' => '비밀번호를 확인해주세요.',
         ]);
     }
 
@@ -65,6 +70,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'user_id' => $data['user_id'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

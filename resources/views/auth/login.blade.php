@@ -10,13 +10,13 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input_data">
-                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autofocus placeholder="아이디를 입력해주세요"
+                        <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror"
+                            name="user_id" value="{{ old('user_id') }}" required autofocus placeholder="아이디를 입력해주세요"
                             onfocus="this.placeholder=''" onblur="this.placeholder='아이디를 입력해주세요'">
 
-                        @error('email')
+                        @error('user_id')
                             <span class="invalid-feedback" role="alert">
-                                <strong> 아이디 또는 비밀번호를 확인하여 주세요. </strong>
+                                <strong> {{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
@@ -29,7 +29,7 @@
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
-                                <strong>비밀번호를 확인하여 주세요.</strong>
+                                <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>

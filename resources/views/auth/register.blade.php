@@ -27,14 +27,29 @@
                     <div class="input_data">
                         <label for="user_id" class="label_id">{{ __('아이디') }}</label>
 
-                        <input id="user_id" type="text" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('user_id') }}" required autocomplete="off"
+                        <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror"
+                            name="user_id" value="{{ old('user_id') }}" required autocomplete="off"
                             placeholder="8자 이상, 영문 혹은 영문과 숫자조합" onfocus="this.placeholder=''"
                             onblur="this.placeholder='8자 이상, 영문 혹은 영문과 숫자조합'">
 
+                        @error('user_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="input_data">
+                        <label for="email" class="label_id">{{ __('이메일') }}</label>
+
+                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="off"
+                            placeholder="이메일을 입력해 주세요" onfocus="this.placeholder=''"
+                            onblur="this.placeholder='이메일을 입력해 주세요'">
+
                         @error('email')
                             <span class="invalid-feedback" role="alert">
-                                <strong>8자 이상 입력하여주세요.</strong>
+                                <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
@@ -48,10 +63,11 @@
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
-                                <strong>비밀번호를 확인하여 주세요.</strong>
+                                <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
+
 
                     <div class="input_data">
                         <label for="password-confirm" class="label_pw2">{{ __('비밀번호 확인') }}</label>
