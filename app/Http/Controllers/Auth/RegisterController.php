@@ -50,13 +50,15 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'user_id' => ['required', 'string', 'min:8', 'max:255', 'unique:users'],
+            'user_id' => ['required', 'string', 'min:8', 'max:255', 'unique:users', 'regex:/^[A-Za-z\d]+$/'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^[A-Za-z\d]+$/'],
         ], [
             'user_id.min' => '아이디는 8자 이상 영문조합이어야 합니다.',
-            'email.min' => '이메일 형식에 맞게 입력해 주세요.',
-            'password.min' => '비밀번호를 확인해주세요.',
+            'user_id.unique' => '이미 존재하는 아이디 입니다.',
+            'email.email' => '이메일 형식에 맞게 입력해 주세요.',
+            'password.confirmed' => '비밀번호가 일치하지 않습니다. ',
+            'password.regex' => '비밀번호는 8자리 이상 영문조합이어야 합니다. ',
         ]);
     }
 

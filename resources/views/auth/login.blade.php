@@ -11,12 +11,12 @@
                     @csrf
                     <div class="input_data">
                         <input id="user_id" type="text" class="form-control @error('user_id') is-invalid @enderror"
-                            name="user_id" value="{{ old('user_id') }}" required autofocus placeholder="아이디를 입력해주세요"
+                            name="user_id" value="{{ old('user_id') }}" required placeholder="아이디를 입력해주세요"
                             onfocus="this.placeholder=''" onblur="this.placeholder='아이디를 입력해주세요'">
 
                         @error('user_id')
                             <span class="invalid-feedback" role="alert">
-                                <strong> {{ $message }}</strong>
+                                <strong>아이디 또는 비밀번호를 확인해 주세요.</strong>
                             </span>
                         @enderror
                     </div>
